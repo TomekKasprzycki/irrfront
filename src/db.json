@@ -1,0 +1,15 @@
+{
+    "users": {
+        "firstName": "",
+        "lastName": "",
+        "email": "",
+        "password": "",
+        "password2": "",
+        "roleDto": "",
+        "active": "",
+        "institutionDto": "",
+        "send": false,
+        "TOKEN": ""
+      }
+
+}

@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import './styles/Font.css'
+import {
+  HashRouter as Router,
+  Route,
+  NavLink,
+  Switch
+} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import Login from './containers/Login'
+import Home from './components/Home'
+import NotFound from './components/NotFound'
+import Registration from './components/Registeration'
 
-function App() {
+const App = () => {
+
+
+  const activeLink = {
+    color: 'blue'
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+      <Router>
+        <div className='fontStyle smallFont'>
+          <p><NavLink exact to="/" activeStyle={activeLink}>Strona główna</NavLink></p>
+          <p><NavLink exact to="/login" activeStyle={activeLink}>Zaloguj</NavLink></p>
+          <p><NavLink exact to="/registration" activeStyle={activeLink}>Zarejestruj</NavLink></p>
+        </div>
+
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/registration" component={Registration} />
+          <Router component={NotFound} />
+        </Switch>
+
+      </Router>
+    </Provider>
+  )
 }
 
 export default App;
