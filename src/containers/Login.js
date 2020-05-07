@@ -1,13 +1,13 @@
 import Login from '../components/Login';
 import { connect } from 'react-redux';
-import { loginProcess } from '../redux/loginActions'
+import { loginUser } from '../redux/loginActions'
 
 const mapState = (state) => ({
     user: state.login
 })
 
 const mapDispatch = (dispatch) => ({
-    login: user => dispatch(loginProcess(user))
+    login: user => dispatch(loginUser(user))
 })
 
 

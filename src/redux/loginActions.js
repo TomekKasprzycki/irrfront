@@ -21,26 +21,27 @@ const loginUser = (userDto) => (dispatch) => {
     const url = 'http://localhost:3001/users'
 
     dispatch(loginHasBegun());
-    setTimeout(dispatch(loginProcess(userDto)),2000)
-    
 
     
-    fetch(url, {
-        method: 'POST', // or 'PUT'
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userDto),
-      })
-      .then((response) => response.json())
-      .then((userDto) => {
-        loginProcess(userDto);
-        console.log('Success:', userDto);
-      })
-      .catch((error) => {
-        loginFailed();
-        console.error('Error:', userDto);
-      });
+    let users = []
+    fetch(url)
+        .then(response => response.json())
+        .then(data => users.push(data))
+        .catch('error')
+
+    const userToCheck = users.filter(user => user.email === userDto.email)
+
+      console.log('user to check: ' + userToCheck)
+
+    if(userToCheck.password === userDto.password){
+      console.log('weszło')
+      dispatch(loginProcess(userDto))
+    } else {
+      alert("Niepoprawny email lub hasło!")
+    }
+
+    console.log(users)
+
     }
 
 export { LOGIN_HAS_BEGUN, loginHasBegun, LOGIN, loginProcess, LOGIN_ERROR, loginFailed, loginUser }

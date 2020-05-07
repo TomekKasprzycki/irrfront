@@ -2,6 +2,7 @@ import { LOGIN, LOGIN_HAS_BEGUN, LOGIN_ERROR } from './loginActions'
 import { REGISTRATION_HAS_BEGUN, REGISTER } from './registrationActions'
 import { combineReducers } from 'redux'
 
+
 const inistState = {
   firstName: '',
   lastName: '',
@@ -23,7 +24,7 @@ const login = (state = inistState, action) => {
         send: true
       };
     case LOGIN:
-      console.log(action.userDto)
+      console.log('logowanie')
       state = {
         email: action.userDto.login,
         password: action.userDto.password,
