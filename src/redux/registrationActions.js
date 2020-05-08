@@ -16,27 +16,27 @@ const registrationFailed = () => ({
 })
 
 const registerUser = (userDto) => (dispatch) => {
-    // const url = '/rest/register'
+    const url = 'http://localhost:3001/users'
 
     dispatch(registrationHasBegun());
-    setTimeout(dispatch(registerProcess(userDto)),2000) 
-    
-    // fetch(url, {
-    //     method: 'POST', // or 'PUT'
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(userDto),
-    //   })
-    //   .then((response) => response.json())
-    //   .then((userDto) => {
-    //     registerProcess(userDto);
-    //     console.log('Success:', userDto);
-    //   })
-    //   .catch((error) => {
-    //     registrationFailed();
-    //     console.error('Error:', userDto);
-    //   });
+    // setTimeout(dispatch(registerProcess(userDto)),2000) 
+    console.log('niby leci akcja')
+    fetch(url, {
+        method: 'POST', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userDto),
+      })
+      .then((response) => response.json())
+      .then((userDto) => {
+        registerProcess(userDto);
+        console.log('Success:', userDto);
+      })
+      .catch((error) => {
+        registrationFailed();
+        console.error('Error:', userDto);
+      });
     }
 
 export { REGISTRATION_HAS_BEGUN, registrationHasBegun, REGISTER, registerProcess, REGISTER_ERROR, registrationFailed, registerUser };

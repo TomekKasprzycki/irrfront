@@ -26,19 +26,25 @@ const loginUser = (userDto) => (dispatch) => {
     let users = []
     fetch(url)
         .then(response => response.json())
-        .then(data => users.push(data))
+        .then(data => data.map(el => users.push(el)))
         .catch('error')
 
-    const userToCheck = users.filter(user => user.email === userDto.email)
+    // const userToCheck = users.forEach(element => {
+    //       if(element.email === userDto.email){
+    //         return element;
+    //       }
+    //     });
 
-      console.log('user to check: ' + userToCheck)
+    // // const userToCheck = users.filter(user => user.email === userDto.email)
 
-    if(userToCheck.password === userDto.password){
-      console.log('weszło')
-      dispatch(loginProcess(userDto))
-    } else {
-      alert("Niepoprawny email lub hasło!")
-    }
+    //   console.log('user to check: ' + userToCheck)
+
+    // if(userToCheck.password === userDto.password){
+    //   console.log('weszło')
+    //   dispatch(loginProcess(userDto))
+    // } else {
+    //   alert("Niepoprawny email lub hasło!")
+    // }
 
     console.log(users)
 

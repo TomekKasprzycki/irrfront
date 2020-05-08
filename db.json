@@ -1,10 +1,12 @@
 {
-  "users": [{
+  "users": [
+    {
       "id": 1,
       "firstName": "Tomasz",
       "lastName": "Kasprzycki",
       "email": "tomasz.kasprzycki@umwm.malopolska.pl",
       "password": "Test0001",
+      "password2": "Test0001",
       "roleDto": 2,
       "active": true,
       "institutionDto": 1,
@@ -17,12 +19,51 @@
       "lastName": "Kowalski",
       "email": "jan.kowalski@umwm.malopolska.pl",
       "password": "Test0002",
+      "password2": "Test0002",
       "roleDto": 2,
       "active": true,
       "institutionDto": 1,
       "send": false,
       "TOKEN": "jakiś token"
+    },
+    {
+      "firstName": "Adam",
+      "lastName": "Nowak",
+      "email": "an@mcp.pl",
+      "password": "d",
+      "password2": "d",
+      "roleDto": "5",
+      "active": false,
+      "institutionDto": "2",
+      "send": false,
+      "TOKEN": "",
+      "id": 3
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Iksińska",
+      "email": "x@wup.pl",
+      "password": "dd",
+      "password2": "dd",
+      "roleDto": 5,
+      "active": false,
+      "institutionDto": "3",
+      "send": false,
+      "TOKEN": "",
+      "id": 4
+    },
+    {
+      "firstName": "Ludwik",
+      "lastName": "Test",
+      "email": "test@test.pl",
+      "password": "fe",
+      "password2": "fe",
+      "roleDto": 5,
+      "active": false,
+      "institutionDto": "01",
+      "send": false,
+      "TOKEN": "",
+      "id": 5
     }
   ]
-
 }

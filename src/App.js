@@ -12,7 +12,7 @@ import store from './redux/store';
 import Login from './containers/Login'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
-import Registration from './components/Registeration'
+import Registration from './containers/Registration'
 
 const App = () => {
 

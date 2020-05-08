@@ -19,3 +19,11 @@
     width: 200px;
     height: 30px;
     }
+
+.frame {
+    border: black 1px solid;
+}
+
+.radio {
+    color: pink;
+}
