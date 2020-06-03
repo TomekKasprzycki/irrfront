@@ -26,7 +26,7 @@ const Registration = ({ register }) => {
             email: document.getElementById('emailID').value,
             password: document.getElementById('passwordID').value,
             password2: document.getElementById('password2ID').value,
-            roleDto: 5,
+            roleDto: "ROLE_WAITING",
             active: false,
             institutionDto: document.querySelector('input[name=institution]:checked').value,
             send: false,

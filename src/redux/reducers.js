@@ -3,21 +3,18 @@ import { REGISTRATION_HAS_BEGUN, REGISTER } from './registrationActions'
 import { combineReducers } from 'redux'
 
 
-const inistState = {
+const loginState = {
   firstName: '',
   lastName: '',
   email: '',
-  password: '',
-  password2: '',
   roleDto: '',
-  active: '',
   institutionDto: '',
   send: false,
   TOKEN: ''
 }
 
 
-const login = (state = inistState, action) => {
+const login = (state = loginState, action) => {
   switch (action.type) {
     case LOGIN_HAS_BEGUN:
       return state = {
@@ -25,9 +22,11 @@ const login = (state = inistState, action) => {
       };
     case LOGIN:
       console.log('logowanie')
+      console.log(action.userDto)
       state = {
-        email: action.userDto.login,
-        password: action.userDto.password,
+        firstName: action.userDto.firstName,
+        lastName: action.userDto.lastName,
+        email: action.userDto.email,
         TOKEN: 'jakis token'
       }
       console.log(state)
@@ -38,6 +37,11 @@ const login = (state = inistState, action) => {
     default:
       return state;
   }
+}
+
+const registerState = {
+  send: false,
+  user: {}
 }
 
 const register = (state = inistState, action) => {
@@ -51,7 +55,7 @@ const register = (state = inistState, action) => {
     case REGISTER:
   
       return state = {
-        login: action.userDto.login
+        user: action.userDto
       }
 
     default:

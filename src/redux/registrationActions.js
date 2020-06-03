@@ -19,7 +19,7 @@ const registerUser = (userDto) => (dispatch) => {
     const url = 'http://localhost:3001/users'
 
     dispatch(registrationHasBegun());
-    // setTimeout(dispatch(registerProcess(userDto)),2000) 
+    
     console.log('niby leci akcja')
     fetch(url, {
         method: 'POST', // or 'PUT'

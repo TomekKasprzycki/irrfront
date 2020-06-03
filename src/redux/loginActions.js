@@ -17,36 +17,24 @@ const loginFailed = () => ({
 })
 
 
-const loginUser = (userDto) => (dispatch) => {
+const getUsers = async (userDto) => {
     const url = 'http://localhost:3001/users'
+
+    const result = await fetch(url)
+    const users = await result.json();
+    const userToCheck = await users.filter(user => user.email === userDto.email)[0]
+
+    return userToCheck;
+}
+
+const loginUser = (userDto) => (dispatch) => {
+
 
     dispatch(loginHasBegun());
 
-    
-    let users = []
-    fetch(url)
-        .then(response => response.json())
-        .then(data => data.map(el => users.push(el)))
-        .catch('error')
 
-    // const userToCheck = users.forEach(element => {
-    //       if(element.email === userDto.email){
-    //         return element;
-    //       }
-    //     });
+    getUsers(userDto).then(result => dispatch(loginProcess(result)));
 
-    // // const userToCheck = users.filter(user => user.email === userDto.email)
-
-    //   console.log('user to check: ' + userToCheck)
-
-    // if(userToCheck.password === userDto.password){
-    //   console.log('weszło')
-    //   dispatch(loginProcess(userDto))
-    // } else {
-    //   alert("Niepoprawny email lub hasło!")
-    // }
-
-    console.log(users)
 
     }
 
