@@ -20,11 +20,18 @@ const loginFailed = () => ({
 const getUsers = async (userDto) => {
     const url = 'http://localhost:3001/users'
 
-    const result = await fetch(url)
-    const users = await result.json();
-    const userToCheck = await users.filter(user => user.email === userDto.email)[0]
+    const result = await fetch(url, {
+        method: 'POST', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userDto),
+      })
+    const user = await result.json();
 
-    return userToCheck;
+    // const userToCheck = await users.filter(user => user.email === userDto.email)[0]
+
+    return user;
 }
 
 const loginUser = (userDto) => (dispatch) => {

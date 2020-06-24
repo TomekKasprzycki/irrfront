@@ -2,67 +2,48 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Tomasz",
-      "lastName": "Kasprzycki",
+      "name": "Tomasz",
       "email": "tomasz.kasprzycki@umwm.malopolska.pl",
       "password": "q",
       "password2": "q",
-      "roleDto": "ROLE_ADMIN",
-      "active": true,
-      "institutionDto": 1,
-      "send": false,
-      "TOKEN": "jakiś token"
+      "roleId": "1",
+      "token": "jakiś token"
     },
     {
       "id": 2,
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "email": "jan.kowalski@umwm.malopolska.pl",
+      "name": "Jan",
+      "email": "jan.kowalski@test.pl",
       "password": "q",
       "password2": "q",
-      "roleDto": "ROLE_USER",
-      "active": true,
-      "institutionDto": 1,
-      "send": false,
-      "TOKEN": "jakiś token"
+      "roleId": "2",
+      "token": "jakiś token"
     },
     {
-      "firstName": "Adam",
-      "lastName": "Nowak",
-      "email": "an@mcp.pl",
+      "id": 3,
+      "name": "Anna",
+      "email": "anna.nowak@test.pl",
       "password": "q",
       "password2": "q",
-      "roleDto": "5",
-      "active": false,
-      "institutionDto": "2",
-      "send": false,
-      "TOKEN": "",
-      "id": 3
+      "roleId": "3",
+      "token": "jakiś token"
     },
+
     {
-      "firstName": "Anna",
-      "lastName": "Iksińska",
-      "email": "x@wup.pl",
+      "id": 4,
+      "name": "Alicja",
+      "email": "ala@test.pl",
       "password": "q",
       "password2": "q",
-      "roleDto": 5,
-      "active": false,
-      "institutionDto": "3",
-      "send": false,
-      "TOKEN": "",
-      "id": 4
+      "roleId": "1",
+      "token": "jakiś token"
     },
     {
-      "firstName": "Ludwik",
-      "lastName": "Test",
+      "name": "Ludwik",
       "email": "test@test.pl",
       "password": "q",
       "password2": "q",
-      "roleDto": 5,
-      "active": false,
-      "institutionDto": "01",
-      "send": false,
-      "TOKEN": "",
+      "roleId": 3,
+      "token": "",
       "id": 5
     }
   ]

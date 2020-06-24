@@ -4,13 +4,12 @@ import { combineReducers } from 'redux'
 
 
 const loginState = {
-  firstName: '',
-  lastName: '',
+  name: '',
   email: '',
-  roleDto: '',
-  institutionDto: '',
-  send: false,
-  TOKEN: ''
+  password: '',
+  password2: '',
+  roleId: '',
+  token: ''
 }
 
 
@@ -24,10 +23,11 @@ const login = (state = loginState, action) => {
       console.log('logowanie')
       console.log(action.userDto)
       state = {
-        firstName: action.userDto.firstName,
-        lastName: action.userDto.lastName,
+        ...userDto,
+        firstName: action.userDto.name,
         email: action.userDto.email,
-        TOKEN: 'jakis token'
+        roleId: action.userDto.roleId,
+        token: action.userDto.token
       }
       console.log(state)
       return state;

@@ -5,8 +5,12 @@ import '../styles/Font.css'
 const Login = ({ user, login }) => {
     
     let userDto = {
+        name: '',
         email: '',
-        password: ''
+        password: '',
+        password2: '',
+        roleId: '',
+        token: ''
       }
     
       const hadnleOnSubmit = (e) => {
