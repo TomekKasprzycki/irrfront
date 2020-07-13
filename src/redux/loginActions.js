@@ -1,6 +1,7 @@
 const LOGIN_HAS_BEGUN = '[login] starting process'
 const LOGIN = '[login] login'
 const LOGIN_ERROR = '[login] on error'
+const LOGOUT = '[login] logout'
 
 
 const loginHasBegun = () => ({
@@ -16,22 +17,24 @@ const loginFailed = () => ({
   type: LOGIN_ERROR
 })
 
+const logoutProcess = () => ({
+  type: LOGOUT
+})
 
-const getUsers = async (userDto) => {
+
+const getUser = async (userDto) => {
     const url = 'http://localhost:3001/users'
 
-    const result = await fetch(url, {
-        method: 'POST', // or 'PUT'
+    return fetch(url + "?email=" + `${userDto.email}`, {
+        method: 'GET', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',
+          'TYPE': 'Login',
         },
-        body: JSON.stringify(userDto),
-      })
-    const user = await result.json();
+        body: JSON.stringify(userDto)})
+        .then(result => result.json())
+        .then(result => result[0]);
 
-    // const userToCheck = await users.filter(user => user.email === userDto.email)[0]
-
-    return user;
 }
 
 const loginUser = (userDto) => (dispatch) => {
@@ -39,10 +42,23 @@ const loginUser = (userDto) => (dispatch) => {
 
     dispatch(loginHasBegun());
 
+    console.log("Zaczynamy pobieranie" + userDto.email)
 
-    getUsers(userDto).then(result => dispatch(loginProcess(result)));
+    getUser(userDto)
+      .then(result => dispatch(loginProcess(result)));
 
+    
+
+    console.log("pobieranie zakończone")
 
     }
 
-export { LOGIN_HAS_BEGUN, loginHasBegun, LOGIN, loginProcess, LOGIN_ERROR, loginFailed, loginUser }
+export { LOGIN_HAS_BEGUN, 
+         LOGIN,  
+         LOGIN_ERROR, 
+         LOGOUT,
+         loginFailed, 
+         loginProcess,
+         loginHasBegun, 
+         loginUser,
+         logoutProcess }

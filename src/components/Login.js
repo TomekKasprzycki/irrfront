@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/Login.css'
 import '../styles/Font.css'
 
-const Login = ({ user, login }) => {
+const Login = ({ user, login, logout }) => {
+
+  useEffect(()=>{ document.title="Strona logowania" },[])
     
     let userDto = {
         name: '',
@@ -28,18 +30,25 @@ const Login = ({ user, login }) => {
           password: up
         }
       }
+
+      const handleLogout = () => {
+        logout();
+      }
     
     
       return (
           user.email === '' ?
-        <div className="divCenter fontStyle">
-          <form onSubmit={hadnleOnSubmit}>
-            <p className="pform"><label className="label">Login: <input type="text" id="loginID" name="login" /></label></p>
-            <p className="pform"><label className="label">Password: <input type="password" id="passID" name="password" /></label></p>
-            <button className="button" type="submit" onClick={handleOnClick} >Zaloguj</button>
-          </form>
+        <div className="fontStyle">
+            <form onSubmit={hadnleOnSubmit}>
+              <p className="pLogin">Login: <input type="text" id="loginID" name="login" /></p>
+              <p className="pPassword">Password: <input type="password" id="passID" name="password" /></p>
+              <button className="button" type="submit" onClick={handleOnClick} >Zaloguj</button>
+            </form>
         </div> :
-        <div>Jesteś już zalogowany!</div>
+        <div className="fontStyle">
+          <div className="helloText">Witaj {user.name}! </div>
+          <button className="button" type="submit" onClick={handleLogout} >Wyloguj</button>
+        </div>
       );
 }
 

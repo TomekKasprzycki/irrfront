@@ -1,0 +1,19 @@
+html, body {
+    height: 100%;
+  }
+
+.home {
+    position: relative;
+    left: 10%;
+    margin-top: 10pt;
+    margin-left: 10pt;
+    width: 85vw;
+    background-color: coral;
+    
+}
+
+.textPosition {
+    margin: 10pt;
+    text-align: left;
+    background-color: wheat;
+}

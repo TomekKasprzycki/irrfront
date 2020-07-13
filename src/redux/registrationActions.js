@@ -25,6 +25,7 @@ const registerUser = (userDto) => (dispatch) => {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',
+          'TYPE': 'Registration',
         },
         body: JSON.stringify(userDto),
       })
@@ -35,8 +36,14 @@ const registerUser = (userDto) => (dispatch) => {
       })
       .catch((error) => {
         registrationFailed();
-        console.error('Error:', userDto);
+        console.error('Error:', error);
       });
     }
 
-export { REGISTRATION_HAS_BEGUN, registrationHasBegun, REGISTER, registerProcess, REGISTER_ERROR, registrationFailed, registerUser };
+export { REGISTRATION_HAS_BEGUN, 
+         REGISTER,
+         REGISTER_ERROR, 
+         registrationHasBegun, 
+         registerProcess, 
+         registrationFailed, 
+         registerUser };

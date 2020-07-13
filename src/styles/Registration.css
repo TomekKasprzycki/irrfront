@@ -1,39 +1,49 @@
-.pLogin {
+.pName {
     position: fixed;
-    right: 35vw;
+    right: 40vw;
     top: 15vh;
     height: 30px;
     }
 
-.pPassword {
+.pLogin2 {
     position: fixed;
-    right: 35vw;
+    right: 40vw;
     top: 20vh;
     height: 30px;
     }
 
+.pPass1 {
+    position: fixed;
+    right: 40vw;
+    top: 25vh;
+    height: 30px;
+    }
+
+.pPass2 {
+    position: fixed;
+    right: 40vw;
+    top: 30vh;
+    height: 30px;
+    }
+
   
-.button {
+.button2 {
     background-color: cornflowerblue;
     color: black;
     font-weight: bold;
     width: 20vw;
     height: 3vh;
     position: fixed;
-    right: 35vw;
-    top: 27vh;
+    right: 40vw;
+    top: 37vh;
     }
 
 .frame {
     border: black 1px solid;
 }
 
-.radio {
-    color: pink;
-}
-
-.helloText{
+.aLink{
     position: fixed;
-    top: 20vh;
-    left: 45vw;
+    right: 40vw;
+    top: 45vh;
 }

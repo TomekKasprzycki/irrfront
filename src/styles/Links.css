@@ -1,0 +1,9 @@
+.panel {
+    float: left;
+    background-color: cornflowerblue;
+    font: bold;
+    color: black;
+    width: 10vw;
+    height: 95vh;
+    margin: 10px;
+}

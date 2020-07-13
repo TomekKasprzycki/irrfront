@@ -1,43 +1,48 @@
 import React from 'react';
 import './styles/App.css';
-import './styles/Font.css'
+import './styles/Font.css';
+import './styles/General.css';
+import './styles/Links.css'
+import './styles/Header.css'
 import {
   HashRouter as Router,
   Route,
-  NavLink,
-  Switch
+  Switch,
+  Redirect
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import {store, persistor} from './redux/store';
 import Login from './containers/Login'
-import Home from './components/Home'
+import Main from './components/Main'
 import NotFound from './components/NotFound'
 import Registration from './containers/Registration'
+import Panel from './containers/Panel'
+import Header from './containers/Header';
+import IrrPreview from './containers/IrrPreview';
+import AdminPanel from './containers/AdminPanel';
+import { PersistGate } from 'redux-persist/integration/react'
+
 
 const App = () => {
 
-
-  const activeLink = {
-    color: 'blue'
-  }
-
   return (
     <Provider store={store}>
-      <Router>
-        <div className='fontStyle smallFont'>
-          <p><NavLink exact to="/" activeStyle={activeLink}>Strona główna</NavLink></p>
-          <p><NavLink exact to="/login" activeStyle={activeLink}>Zaloguj</NavLink></p>
-          <p><NavLink exact to="/registration" activeStyle={activeLink}>Zarejestruj</NavLink></p>
-        </div>
+      <PersistGate loading={null} persistor={persistor}>
+        <Router>
+              <Header />
+              <Panel />
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/registration" component={Registration} />
-          <Router component={NotFound} />
-        </Switch>
-
-      </Router>
+              <Switch>
+                <Route exact path="/" component={Main}/>
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/registration" component={Registration} />
+                <Route path="/PageNotFoundError" component={NotFound} />
+                <Route path="/preview" component={IrrPreview} />
+                <Route path="/adminpanel" component={AdminPanel} />
+                <Redirect from="*" to="/PageNotFoundError" />
+              </Switch>          
+        </Router>
+      </PersistGate>
     </Provider>
   )
 }

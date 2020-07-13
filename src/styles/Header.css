@@ -1,0 +1,15 @@
+.header {
+    height: 5vh;
+    width: 95vw;
+    background-color: yellow;
+    margin-left: 10pt;
+    margin-right: 10pt;
+}
+
+.title{
+    font-size: xx-large;
+}
+
+.user{
+    font-size: medium;
+}

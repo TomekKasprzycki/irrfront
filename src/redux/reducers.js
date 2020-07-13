@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_HAS_BEGUN, LOGIN_ERROR } from './loginActions'
+import { LOGIN, LOGIN_HAS_BEGUN, LOGIN_ERROR, LOGOUT } from './loginActions'
 import { REGISTRATION_HAS_BEGUN, REGISTER } from './registrationActions'
 import { combineReducers } from 'redux'
 
@@ -16,15 +16,12 @@ const loginState = {
 const login = (state = loginState, action) => {
   switch (action.type) {
     case LOGIN_HAS_BEGUN:
-      return state = {
-        send: true
-      };
+      return state;
     case LOGIN:
       console.log('logowanie')
       console.log(action.userDto)
       state = {
-        ...userDto,
-        firstName: action.userDto.name,
+        name: action.userDto.name,
         email: action.userDto.email,
         roleId: action.userDto.roleId,
         token: action.userDto.token
@@ -32,7 +29,9 @@ const login = (state = loginState, action) => {
       console.log(state)
       return state;
     case LOGIN_ERROR:
-      return inistState;
+      return loginState;
+    case LOGOUT:
+      return state = loginState;
 
     default:
       return state;
@@ -44,7 +43,7 @@ const registerState = {
   user: {}
 }
 
-const register = (state = inistState, action) => {
+const register = (state = registerState, action) => {
   switch (action.type) {
     case REGISTRATION_HAS_BEGUN:
       
@@ -59,7 +58,7 @@ const register = (state = inistState, action) => {
       }
 
     default:
-      return inistState;
+      return registerState;
   }
 }
 
