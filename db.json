@@ -27,7 +27,6 @@
       "roleId": "3",
       "token": "jakiś token"
     },
-
     {
       "id": 4,
       "name": "Alicja",
@@ -45,6 +44,16 @@
       "roleId": 3,
       "token": "",
       "id": 5
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 6
+    },
+    {
+      "email": "ala@test.pl",
+      "password": "",
+      "id": 7
     }
   ]
 }

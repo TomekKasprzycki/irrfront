@@ -30,8 +30,7 @@ const getUser = async (userDto) => {
         headers: {
           'Content-Type': 'application/json',
           'TYPE': 'Login',
-        },
-        body: JSON.stringify(userDto)})
+        }})
         .then(result => result.json())
         .then(result => result[0]);
 
@@ -42,7 +41,7 @@ const loginUser = (userDto) => (dispatch) => {
 
     dispatch(loginHasBegun());
 
-    console.log("Zaczynamy pobieranie" + userDto.email)
+    console.log("Zaczynamy pobieranie " + userDto.email)
 
     getUser(userDto)
       .then(result => dispatch(loginProcess(result)));
@@ -52,6 +51,9 @@ const loginUser = (userDto) => (dispatch) => {
     console.log("pobieranie zakończone")
 
     }
+
+
+
 
 export { LOGIN_HAS_BEGUN, 
          LOGIN,  

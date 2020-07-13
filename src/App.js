@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/App.css';
+
 import './styles/Font.css';
 import './styles/General.css';
 import './styles/Links.css'
