@@ -1,6 +1,7 @@
 import Login from '../components/Login';
 import { connect } from 'react-redux';
 import { loginUser, logoutProcess } from '../redux/loginActions'
+import { fetchAllTypes, fetchAllDocs } from '../redux/dropListsActions'
 
 const mapState = (state) => ({
     user: state.login
@@ -8,7 +9,9 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
     login: user => dispatch(loginUser(user)),
-    logout: () => dispatch(logoutProcess())
+    logout: () => dispatch(logoutProcess()),
+    getDocs: () => dispatch(fetchAllDocs()),
+    getTypes: () => dispatch(fetchAllTypes())
 })
 
 

@@ -2,8 +2,7 @@
     height: 5vh;
     width: 95vw;
     background-color: yellow;
-    margin-left: 10pt;
-    margin-right: 10pt;
+    padding: 10px;
 }
 
 .title{
@@ -12,4 +11,5 @@
 
 .user{
     font-size: medium;
+    float: right;
 }

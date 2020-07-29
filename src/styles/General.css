@@ -1,19 +1,18 @@
-html, body {
-    height: 100%;
-  }
-
 .home {
-    position: relative;
-    left: 10%;
-    margin-top: 10pt;
-    margin-left: 10pt;
+    float: right;
+    position: fixed;
+    left: 10vw;
     width: 85vw;
+    padding: 10px;
     background-color: coral;
-    
 }
 
 .textPosition {
-    margin: 10pt;
+    padding: 10px;
     text-align: left;
     background-color: wheat;
+}
+
+.toTheLeft{
+    float: left;
 }

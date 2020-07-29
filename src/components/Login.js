@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import '../styles/Login.css'
 import '../styles/Font.css'
 
-const Login = ({ user, login, logout }) => {
+const Login = ({ user, login, logout, getDocs, getTypes }) => {
 
   useEffect(()=>{ document.title="Strona logowania" },[])
+  
     
     let userDto = {
         name: '',
@@ -29,6 +30,12 @@ const Login = ({ user, login, logout }) => {
           email: un,
           password: up
         }
+      }
+
+      if (user.email !== '') {
+        console.log("pobieram do drop list")
+        getDocs();
+        getTypes();
       }
 
       const handleLogout = () => {

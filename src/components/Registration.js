@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Font.css'
 import '../styles/Registration.css'
 
-const Registration = ({ register }) => {
+const Registration = () => {
 
     useEffect(()=>{ document.title="Rejestracja" },[])
 

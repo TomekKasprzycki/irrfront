@@ -6,6 +6,8 @@ const Main = () => {
         document.title = "Strona główna"
     },[])
 
+    
+
     return(
         <div className='fontStyle home'>
             <h1 className='textPosition'>Lorem Ipsum</h1>

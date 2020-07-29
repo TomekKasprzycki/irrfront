@@ -14,10 +14,8 @@ const persistConfig = {
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)
-
 const middleware = [thunk, logger];
-
-  let store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(...middleware)));
-  let persistor = persistStore(store)
+let store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(...middleware)));
+let persistor = persistStore(store)
 
 export {store, persistor};

@@ -15,7 +15,7 @@ import {store, persistor} from './redux/store';
 import Login from './containers/Login'
 import Main from './components/Main'
 import NotFound from './components/NotFound'
-import Registration from './containers/Registration'
+import Registration from './components/Registration'
 import Panel from './containers/Panel'
 import Header from './containers/Header';
 import IrrPreview from './containers/IrrPreview';
@@ -23,7 +23,9 @@ import AdminPanel from './containers/AdminPanel';
 import { PersistGate } from 'redux-persist/integration/react'
 
 
+
 const App = () => {
+
 
   return (
     <Provider store={store}>

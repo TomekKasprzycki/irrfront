@@ -1,5 +1,5 @@
 import { LOGIN, LOGIN_HAS_BEGUN, LOGIN_ERROR, LOGOUT } from './loginActions'
-import { REGISTRATION_HAS_BEGUN, REGISTER } from './registrationActions'
+import { GETALLDOCS, GETALLTYPES } from './dropListsActions'
 import { combineReducers } from 'redux'
 
 
@@ -38,32 +38,38 @@ const login = (state = loginState, action) => {
   }
 }
 
-const registerState = {
-  send: false,
-  user: {}
+const initDocState = []
+
+const irr_docs = (state = initDocState, action) => {
+  switch (action.type) {
+    case GETALLDOCS:
+      return state = {
+        ...action.payload
+      };
+  
+    default:
+      console.log("ITS THE REASON!")
+      return state;
+  }
 }
 
-const register = (state = registerState, action) => {
+const initTypesState = []
+
+const irr_types = (state = initTypesState, action) => {
   switch (action.type) {
-    case REGISTRATION_HAS_BEGUN:
-      
+    case GETALLTYPES:
       return state = {
-        send: true
-      };
-
-    case REGISTER:
+        ...action.payload}
+        ;
   
-      return state = {
-        user: action.userDto
-      }
-
     default:
-      return registerState;
+      return state;
   }
 }
 
 
   export default combineReducers({
     login,
-    register}
+    irr_docs, 
+    irr_types}
 )

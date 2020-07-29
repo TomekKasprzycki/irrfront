@@ -7,15 +7,17 @@ const Panel = ({ user }) => {
         color: 'blue'
       }
 
+
+
     return(
-        <div className='fontStyle smallFont panel'>
-            <p><NavLink exact to="/" activeStyle={activeLink}>Strona główna</NavLink></p>
-            <p><NavLink exact to="/login" activeStyle={activeLink}>Zaloguj</NavLink></p>
-            <p><NavLink exact to="/registration" activeStyle={activeLink}>Zarejestruj</NavLink></p>
+        <div onEnded className='fontStyle smallFont panel'>
+            <p className="links"><NavLink exact to="/" activeStyle={activeLink}>Strona główna</NavLink></p>
+            <p className="links"><NavLink exact to="/login" activeStyle={activeLink}>Zaloguj</NavLink></p>
+            <p className="links"><NavLink exact to="/registration" activeStyle={activeLink}>Zarejestruj</NavLink></p>
             {user.email !== '' ?
-            <p><NavLink exact to="/preview" activeStyle={activeLink}>Przegląd nieprawidłowości</NavLink></p> : "" }
-            {user.roleId === '1' ?
-            <p><NavLink exact to="/adminpanel" activeStyle={activeLink}>Panel administacyjny</NavLink></p> : "" }
+            <p className="links"><NavLink exact to="/preview" activeStyle={activeLink}>Przegląd nieprawidłowości</NavLink></p> : "" }
+            {user.roleId === 'ROLE_ADMIN' ?
+            <p className="links"><NavLink to="/adminpanel" activeStyle={activeLink}>Panel administacyjny</NavLink></p> : "" }
         </div>
     )
 }
