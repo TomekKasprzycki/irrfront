@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
     Redirect
   } from 'react-router-dom';
@@ -10,13 +10,9 @@ const IrrPreview = ({ user, irr_docs, irr_types }) => {
 
     console.log(store.getState())
 
-    useEffect(() => {
-        document.title = "Przegląd nieprawidłowości"
-    },[])
-
     const [irr, setIrr] = useState([])
 
-    const getIrregularities = async () => {
+    const getIrregularities = useCallback (() => {
         const url = "http://localhost:3001/irregularities"
 
         return fetch(url, {
@@ -26,12 +22,13 @@ const IrrPreview = ({ user, irr_docs, irr_types }) => {
                 'Authorization': user.token,
             }})
             .then(result => result.json())
-    }
+    }, [user.token])
 
-        if (irr.length === 0){
-        getIrregularities()
-            .then(result => setIrr(result))
-    }
+    useEffect(() => {
+        document.title = "Przegląd nieprawidłowości";
+
+        getIrregularities().then(result => setIrr(result))
+    },[getIrregularities])
 
     
     return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
     Redirect
   } from 'react-router-dom';
@@ -7,11 +7,9 @@ import '../styles/UserTable.css'
 
 const AdminPanel = ({ user }) => {
 
-    useEffect(() => { document.title = "Panel administracyjny" }, [])
-
     const [users, setUsers] = useState([])  
     
-    const getUsers = async () => {
+    const getUsers = useCallback(async  () => {
         
         const url = "http://localhost:3001/users"
         console.log(user.token)
@@ -25,12 +23,11 @@ const AdminPanel = ({ user }) => {
             .then(result => result.json())
             
             
-        }
-        
-    if (users.length === 0){
-        getUsers().then(result => setUsers(result))
-    }
-       
+        }, [user.token])
+
+        useEffect(() => { document.title = "Panel administracyjny";
+        getUsers().then(result => setUsers(result)) }, [getUsers])
+
     const handleOnLoad = async () => {
 
         setUsers(await getUsers())

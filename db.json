@@ -363,10 +363,27 @@
       },
       "wna":"RPMP.01.01.01-0001/20",
       "podst_niepr_id":2,
-      "rodzaj_n-Id":[1,2],
+      "rodzaj_n_Id":[1,2],
       "descriptionOfIrr":"Łooo panie, ale narobili bigosu!!!!",
       "totalIrregularityAmmount":31454,
       "EUFounding":27500,
+      "creator":"ala@test.pl"
+    },
+    {
+      "id":2,
+      "dateOfCreation":"2020-07-12",
+      "dateOfIrregularity":"2020-04-04",
+      "beneficiary":{
+        "id":1,
+        "name":"Firma ABC",
+        "nip":"5310732355"
+      },
+      "wna":"RPMP.01.01.01-0001/20",
+      "podst_niepr_id":1,
+      "rodzaj_n_Id":[1,3],
+      "descriptionOfIrr":"Łooo panie, ale narobili jeszcze większego bigosu bigosu!!!!",
+      "totalIrregularityAmmount":131454,
+      "EUFounding":107500,
       "creator":"ala@test.pl"
     }
   ]

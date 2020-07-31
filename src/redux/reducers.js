@@ -43,12 +43,10 @@ const initDocState = []
 const irr_docs = (state = initDocState, action) => {
   switch (action.type) {
     case GETALLDOCS:
-      return state = {
-        ...action.payload
-      };
+      console.log(action.payload)
+      return state = action.payload;
   
     default:
-      console.log("ITS THE REASON!")
       return state;
   }
 }
@@ -58,9 +56,7 @@ const initTypesState = []
 const irr_types = (state = initTypesState, action) => {
   switch (action.type) {
     case GETALLTYPES:
-      return state = {
-        ...action.payload}
-        ;
+      return state = action.payload;
   
     default:
       return state;
