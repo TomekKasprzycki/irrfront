@@ -8,7 +8,7 @@
       "password2": "q",
       "roleId": "ROLE_ADMIN",
       "institution": "UMWM - ZPO",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVG9tYXN6IiwiZW1haWwiOiJ0b21hc3oua2FzcHJ6eWNraUB1bXdtLm1hbG9wb2xza2EucGwiLCJyb2xlSWQiOiJST0xFX0FETUlOIiwiaW5zdGl0dXRpb24iOiJVTVdNIC0gWlBPIn0.F6-DJ_Ijiktr8KByMibNPH1X8zI_xpSX4zUaN0_HwNg"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "password2": "q",
       "roleId": "ROLE_USER",
       "institution": "Małopolskie Centrum Przediębiorczości",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmFuIiwiZW1haWwiOiJqYW4ua293YWxza2lAdGVzdC5wbCIsInJvbGVJZCI6IlJPTEVfVVNFUiIsImluc3RpdHV0aW9uIjoiTWHFgm9wb2xza2llIENlbnRydW0gUHJ6ZWRpxJliaW9yY3pvxZtjaSJ9.DfG9lz0Q5DM_X50q8SLDs8Rz_0Co4wBr93B-8Aam3ZY"
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "password2": "q",
       "roleId": "ROLE_USER",
       "institution": "UMWM - FE",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQW5uYSIsImVtYWlsIjoiYW5uYS5ub3dha0B0ZXN0LnBsIiwicm9sZUlkIjoiUk9MRV9VU0VSIiwiaW5zdGl0dXRpb24iOiJVTVdNIC1GRSJ9.WS-YgTVBOYVIMm2PPB_Rk9-NJz_2XCZ0wL16dE2h2aQ"
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "password2": "q",
       "roleId": "ROLE_ADMIN",
       "institution": "UMWM - ZPO",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxpY2phIiwiZW1haWwiOiJhbGFAdGVzdC5wbCIsInJvbGVJZCI6IlJPTEVfQURNSU4iLCJpbnN0aXR1dGlvbiI6IlVNV00gLSBaUE8ifQ.g3i_DWTaykA5eFyronjFQcjJV3pwGp0bqh6wjQBTO24"
     },
     {
       "name": "Ludwik",
@@ -47,7 +47,7 @@
       "password2": "q",
       "roleId": "ROLE_OBSERVER",
       "institution": "UMWM - BC",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVkd2lrIiwiZW1haWwiOiJ0ZXN0QHRlc3QucGwiLCJyb2xlSWQiOiJST0xFX09CU0VSVkVSIiwiaW5zdGl0dXRpb24iOiJVTVdNIC0gQkMifQ.e1B3y5AqEv25eaqW6uuUtNFypH0wUKR6t2gAk5U3bVo",
       "id": 5
     }
   ],

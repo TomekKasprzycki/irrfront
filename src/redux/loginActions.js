@@ -32,27 +32,36 @@ const getUser = async (userDto) => {
           'TYPE': 'Login',
         }})
         .then(result => result.json())
-        .then(result => result[0]);
+        .then(result => result[0])
+        .then(result => result.token)
+        .then(result => parseJwt(result))
 
 }
 
 const loginUser = (userDto) => (dispatch) => {
 
-
     dispatch(loginHasBegun());
-
-    console.log("Zaczynamy pobieranie " + userDto.email)
 
     getUser(userDto)
       .then(result => dispatch(loginProcess(result)));
 
-    
-
-    console.log("pobieranie zakończone")
-
     }
 
-
+    const parseJwt = (token) => {
+      try {
+        const uD = JSON.parse(atob(token.split('.')[1]));
+        const fUD = {
+          token: token,
+          name: uD.name, 
+          email: uD.email, 
+          institution: uD.institution, 
+          roleId: uD.roleId
+        }
+        return fUD;
+      } catch (e) {
+        return null;
+      }
+    };
 
 
 export { LOGIN_HAS_BEGUN, 

@@ -1,7 +1,5 @@
 .home {
-    float: right;
-    position: fixed;
-    left: 10vw;
+    float: left;
     width: 85vw;
     padding: 10px;
     background-color: coral;

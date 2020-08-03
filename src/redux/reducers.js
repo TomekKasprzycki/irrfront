@@ -6,12 +6,10 @@ import { combineReducers } from 'redux'
 const loginState = {
   name: '',
   email: '',
-  password: '',
-  password2: '',
   roleId: '',
+  institution: '',
   token: ''
 }
-
 
 const login = (state = loginState, action) => {
   switch (action.type) {
@@ -24,6 +22,7 @@ const login = (state = loginState, action) => {
         name: action.userDto.name,
         email: action.userDto.email,
         roleId: action.userDto.roleId,
+        institution: action.userDto.institution,
         token: action.userDto.token
       }
       console.log(state)
