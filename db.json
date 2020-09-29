@@ -49,9 +49,12 @@
       "institution": "UMWM - BC",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVkd2lrIiwiZW1haWwiOiJ0ZXN0QHRlc3QucGwiLCJyb2xlSWQiOiJST0xFX09CU0VSVkVSIiwiaW5zdGl0dXRpb24iOiJVTVdNIC0gQkMifQ.e1B3y5AqEv25eaqW6uuUtNFypH0wUKR6t2gAk5U3bVo",
       "id": 5
+    },
+    {
+      "id": 6
     }
   ],
-  "podst_niepr":[
+  "podst_niepr": [
     {
       "id": 1,
       "name": "Informacja pokontrolna"
@@ -65,326 +68,332 @@
       "name": "Raport końcowy z kontroli instytucji UE (np. KE, OLAF)"
     },
     {
-      "id":4,
+      "id": 4,
       "name": "Inne"
     }
   ],
-  "Rodzaj_N":[
+  "Rodzaj_N": [
     {
-      "id":1,
-      "name":"Wydatki niekwalifikowalne"
+      "id": 1,
+      "name": "Wydatki niekwalifikowalne"
     },
     {
-      "id":2,
-      "name":"Naruszenie PZP"
+      "id": 2,
+      "name": "Naruszenie PZP"
     },
     {
-      "id":3,
-      "name":"Podejrzenie nadużycia finansowego"
+      "id": 3,
+      "name": "Podejrzenie nadużycia finansowego"
     },
     {
-      "id":4,
-      "name":"Zwrot zaliczki po terminie"
+      "id": 4,
+      "name": "Zwrot zaliczki po terminie"
     },
     {
-      "id":5,
-      "name":"Podwójne finansowanie"
+      "id": 5,
+      "name": "Podwójne finansowanie"
     },
     {
-      "id":6,
-      "name":"Zasada konkurencyjności"
+      "id": 6,
+      "name": "Zasada konkurencyjności"
     },
     {
-      "id":7,
-      "name":"Inne"
+      "id": 7,
+      "name": "Inne"
     },
     {
-      "id":8,
-      "name":"Naruszenie zasady konkurencyjności"
+      "id": 8,
+      "name": "Naruszenie zasady konkurencyjności"
     }
   ],
-  "Beneficjenci":[
+  "Beneficjenci": [
     {
-      "id":1,
-      "name":"Firma ABC",
-      "nip":"5310732355"
+      "id": 1,
+      "name": "Firma ABC",
+      "nip": "5310732355"
     },
     {
-      "id":2,
-      "name":"Stowarzyszenie XYZ",
-      "nip":"3945566123"
+      "id": 2,
+      "name": "Stowarzyszenie XYZ",
+      "nip": "3945566123"
     },
     {
-      "id":3,
-      "name":"Powiat ABC",
-      "nip":"6011089998"
+      "id": 3,
+      "name": "Powiat ABC",
+      "nip": "6011089998"
     }
   ],
-  "WNA":[
+  "WNA": [
     {
-      "id":1,
-      "number":"RPMP.01.01.01-0001/20",
-      "ben_id":1
+      "id": 1,
+      "number": "RPMP.01.01.01-0001/20",
+      "ben_id": 1
     },
     {
-      "id":2,
-      "number":"RPMP.01.02.01-0012/20",
-      "ben_id":1
+      "id": 2,
+      "number": "RPMP.01.02.01-0012/20",
+      "ben_id": 1
     },
     {
-      "id":3,
-      "number":"RPMP.03.01.01-0001/20",
-      "ben_id":2
+      "id": 3,
+      "number": "RPMP.03.01.01-0001/20",
+      "ben_id": 2
     },
     {
-      "id":4,
-      "number":"RPMP.03.04.01-0031/20",
-      "ben_id":2
+      "id": 4,
+      "number": "RPMP.03.04.01-0031/20",
+      "ben_id": 2
     },
     {
-      "id":5,
-      "number":"RPMP.03.01.01-0121/20",
-      "ben_id":3
+      "id": 5,
+      "number": "RPMP.03.01.01-0121/20",
+      "ben_id": 3
     },
     {
-      "id":6,
-      "number":"RPMP.03.03.01-0061/20",
-      "ben_id":3
+      "id": 6,
+      "number": "RPMP.03.03.01-0061/20",
+      "ben_id": 3
     },
     {
-      "id":7,
-      "number":"RPMP.07.01.01-0006/20",
-      "ben_id":3
+      "id": 7,
+      "number": "RPMP.07.01.01-0006/20",
+      "ben_id": 3
     }
   ],
-  "WNP":[
+  "WNP": [
     {
-      "id":1,
-      "wna":1,
-      "number":"RPMP.01.01.01-0001/20-001",
-      "dateOfAcceptation":"2020-03-01",
-      "certyfied":"N",
-      "totalExpenses":92010,
-      "eligibleExpenditure":71012,
-      "confirmedEligibleExpenditure":71012,
-      "funding":61278,
-      "income":0
+      "id": 1,
+      "wna": 1,
+      "number": "RPMP.01.01.01-0001/20-001",
+      "dateOfAcceptation": "2020-03-01",
+      "certyfied": "N",
+      "totalExpenses": 92010,
+      "eligibleExpenditure": 71012,
+      "confirmedEligibleExpenditure": 71012,
+      "funding": 61278,
+      "income": 0
     },
     {
-      "id":2,
-      "wna":1,
-      "number":"RPMP.01.01.01-0001/20-001",
-      "dateOfAcceptation":"2020-03-01",
-      "certyfied":"N",
-      "totalExpenses":81365,
-      "eligibleExpenditure":70200,
-      "confirmedEligibleExpenditure":70200,
-      "funding":61500,
-      "income":0
+      "id": 2,
+      "wna": 1,
+      "number": "RPMP.01.01.01-0001/20-001",
+      "dateOfAcceptation": "2020-03-01",
+      "certyfied": "N",
+      "totalExpenses": 81365,
+      "eligibleExpenditure": 70200,
+      "confirmedEligibleExpenditure": 70200,
+      "funding": 61500,
+      "income": 0
     },
     {
-      "id":3,
-      "wna":2,
-      "number":"RPMP.01.02.01-0012/20-001",
-      "dateOfAcceptation":"2020-02-12",
-      "certyfied":"N",
-      "totalExpenses":152361,
-      "eligibleExpenditure":131012,
-      "confirmedEligibleExpenditure":131012,
-      "funding":114259,
-      "income":0
+      "id": 3,
+      "wna": 2,
+      "number": "RPMP.01.02.01-0012/20-001",
+      "dateOfAcceptation": "2020-02-12",
+      "certyfied": "N",
+      "totalExpenses": 152361,
+      "eligibleExpenditure": 131012,
+      "confirmedEligibleExpenditure": 131012,
+      "funding": 114259,
+      "income": 0
     },
     {
-      "id":4,
-      "wna":2,
-      "number":"RPMP.01.02.01-0012/20-003",
-      "dateOfAcceptation":"2020-04-17",
-      "certyfied":"N",
-      "totalExpenses":282361,
-      "eligibleExpenditure":231012,
-      "confirmedEligibleExpenditure":231012,
-      "funding":204259,
-      "income":0
+      "id": 4,
+      "wna": 2,
+      "number": "RPMP.01.02.01-0012/20-003",
+      "dateOfAcceptation": "2020-04-17",
+      "certyfied": "N",
+      "totalExpenses": 282361,
+      "eligibleExpenditure": 231012,
+      "confirmedEligibleExpenditure": 231012,
+      "funding": 204259,
+      "income": 0
     },
     {
-      "id":5,
-      "wna":2,
-      "number":"RPMP.01.02.01-0012/20-004",
-      "dateOfAcceptation":"2020-06-11",
-      "certyfied":"N",
-      "totalExpenses":95222,
-      "eligibleExpenditure":71500,
-      "confirmedEligibleExpenditure":71500,
-      "funding":67200,
-      "income":0
+      "id": 5,
+      "wna": 2,
+      "number": "RPMP.01.02.01-0012/20-004",
+      "dateOfAcceptation": "2020-06-11",
+      "certyfied": "N",
+      "totalExpenses": 95222,
+      "eligibleExpenditure": 71500,
+      "confirmedEligibleExpenditure": 71500,
+      "funding": 67200,
+      "income": 0
     },
     {
-      "id":6,
-      "wna":3,
-      "number":"RPMP.03.01.01-0001/20-001",
-      "dateOfAcceptation":"2020-02-21",
-      "certyfied":"N",
-      "totalExpenses":211580,
-      "eligibleExpenditure":190600,
-      "confirmedEligibleExpenditure":190600,
-      "funding":175000,
-      "income":0
+      "id": 6,
+      "wna": 3,
+      "number": "RPMP.03.01.01-0001/20-001",
+      "dateOfAcceptation": "2020-02-21",
+      "certyfied": "N",
+      "totalExpenses": 211580,
+      "eligibleExpenditure": 190600,
+      "confirmedEligibleExpenditure": 190600,
+      "funding": 175000,
+      "income": 0
     },
     {
-      "id":7,
-      "wna":3,
-      "number":"RPMP.03.01.01-0001/20-002",
-      "dateOfAcceptation":"2020-05-11",
-      "certyfied":"N",
-      "totalExpenses":259700,
-      "eligibleExpenditure":225000,
-      "confirmedEligibleExpenditure":225000,
-      "funding":195000,
-      "income":0
+      "id": 7,
+      "wna": 3,
+      "number": "RPMP.03.01.01-0001/20-002",
+      "dateOfAcceptation": "2020-05-11",
+      "certyfied": "N",
+      "totalExpenses": 259700,
+      "eligibleExpenditure": 225000,
+      "confirmedEligibleExpenditure": 225000,
+      "funding": 195000,
+      "income": 0
     },
     {
-      "id":8,
-      "wna":3,
-      "number":"RPMP.03.01.01-0001/20-002",
-      "dateOfAcceptation":"2020-06-30",
-      "certyfied":"N",
-      "totalExpenses":358120,
-      "eligibleExpenditure":311250,
-      "confirmedEligibleExpenditure":311250,
-      "funding":298000,
-      "income":0
+      "id": 8,
+      "wna": 3,
+      "number": "RPMP.03.01.01-0001/20-002",
+      "dateOfAcceptation": "2020-06-30",
+      "certyfied": "N",
+      "totalExpenses": 358120,
+      "eligibleExpenditure": 311250,
+      "confirmedEligibleExpenditure": 311250,
+      "funding": 298000,
+      "income": 0
     },
     {
-      "id":9,
-      "wna":4,
-      "number":"RPMP.03.04.01-0031/20-001",
-      "dateOfAcceptation":"2020-02-14",
-      "certyfied":"N",
-      "totalExpenses":58962,
-      "eligibleExpenditure":52125,
-      "confirmedEligibleExpenditure":52125,
-      "funding":46850,
-      "income":0
+      "id": 9,
+      "wna": 4,
+      "number": "RPMP.03.04.01-0031/20-001",
+      "dateOfAcceptation": "2020-02-14",
+      "certyfied": "N",
+      "totalExpenses": 58962,
+      "eligibleExpenditure": 52125,
+      "confirmedEligibleExpenditure": 52125,
+      "funding": 46850,
+      "income": 0
     },
     {
-      "id":10,
-      "wna":4,
-      "number":"RPMP.03.04.01-0031/20-002",
-      "dateOfAcceptation":"2020-04-04",
-      "certyfied":"N",
-      "totalExpenses":94962,
-      "eligibleExpenditure":82125,
-      "confirmedEligibleExpenditure":82125,
-      "funding":76850,
-      "income":0
+      "id": 10,
+      "wna": 4,
+      "number": "RPMP.03.04.01-0031/20-002",
+      "dateOfAcceptation": "2020-04-04",
+      "certyfied": "N",
+      "totalExpenses": 94962,
+      "eligibleExpenditure": 82125,
+      "confirmedEligibleExpenditure": 82125,
+      "funding": 76850,
+      "income": 0
     },
     {
-      "id":11,
-      "wna":5,
-      "number":"RPMP.03.01.01-0121/20-001",
-      "dateOfAcceptation":"2020-04-14",
-      "certyfied":"N",
-      "totalExpenses":158962,
-      "eligibleExpenditure":142125,
-      "confirmedEligibleExpenditure":142125,
-      "funding":126850,
-      "income":0
+      "id": 11,
+      "wna": 5,
+      "number": "RPMP.03.01.01-0121/20-001",
+      "dateOfAcceptation": "2020-04-14",
+      "certyfied": "N",
+      "totalExpenses": 158962,
+      "eligibleExpenditure": 142125,
+      "confirmedEligibleExpenditure": 142125,
+      "funding": 126850,
+      "income": 0
     },
     {
-      "id":12,
-      "wna":6,
-      "number":"RPMP.03.03.01-0061/20-001",
-      "dateOfAcceptation":"2020-03-14",
-      "certyfied":"N",
-      "totalExpenses":312585,
-      "eligibleExpenditure":286212,
-      "confirmedEligibleExpenditure":286212,
-      "funding":244585,
-      "income":0
+      "id": 12,
+      "wna": 6,
+      "number": "RPMP.03.03.01-0061/20-001",
+      "dateOfAcceptation": "2020-03-14",
+      "certyfied": "N",
+      "totalExpenses": 312585,
+      "eligibleExpenditure": 286212,
+      "confirmedEligibleExpenditure": 286212,
+      "funding": 244585,
+      "income": 0
     },
     {
-      "id":13,
-      "wna":6,
-      "number":"RPMP.03.03.01-0061/20-002",
-      "dateOfAcceptation":"2020-05-14",
-      "certyfied":"N",
-      "totalExpenses":332585,
-      "eligibleExpenditure":299212,
-      "confirmedEligibleExpenditure":299212,
-      "funding":254585,
-      "income":0
+      "id": 13,
+      "wna": 6,
+      "number": "RPMP.03.03.01-0061/20-002",
+      "dateOfAcceptation": "2020-05-14",
+      "certyfied": "N",
+      "totalExpenses": 332585,
+      "eligibleExpenditure": 299212,
+      "confirmedEligibleExpenditure": 299212,
+      "funding": 254585,
+      "income": 0
     },
     {
-      "id":14,
-      "wna":6,
-      "number":"RPMP.03.03.01-0061/20-003",
-      "dateOfAcceptation":"2020-06-24",
-      "certyfied":"N",
-      "totalExpenses":482585,
-      "eligibleExpenditure":396212,
-      "confirmedEligibleExpenditure":396212,
-      "funding":314585,
-      "income":0
+      "id": 14,
+      "wna": 6,
+      "number": "RPMP.03.03.01-0061/20-003",
+      "dateOfAcceptation": "2020-06-24",
+      "certyfied": "N",
+      "totalExpenses": 482585,
+      "eligibleExpenditure": 396212,
+      "confirmedEligibleExpenditure": 396212,
+      "funding": 314585,
+      "income": 0
     },
     {
-      "id":15,
-      "wna":7,
-      "number":"RPMP.07.01.01-0006/20-001",
-      "dateOfAcceptation":"2020-02-24",
-      "certyfied":"N",
-      "totalExpenses":1212585,
-      "eligibleExpenditure":1007212,
-      "confirmedEligibleExpenditure":1007212,
-      "funding":844585,
-      "income":0
+      "id": 15,
+      "wna": 7,
+      "number": "RPMP.07.01.01-0006/20-001",
+      "dateOfAcceptation": "2020-02-24",
+      "certyfied": "N",
+      "totalExpenses": 1212585,
+      "eligibleExpenditure": 1007212,
+      "confirmedEligibleExpenditure": 1007212,
+      "funding": 844585,
+      "income": 0
     },
     {
-      "id":16,
-      "wna":7,
-      "number":"RPMP.07.01.01-0006/20-001",
-      "dateOfAcceptation":"2020-05-17",
-      "certyfied":"N",
-      "totalExpenses":1512585,
-      "eligibleExpenditure":1157212,
-      "confirmedEligibleExpenditure":1157212,
-      "funding":1000000,
-      "income":0
+      "id": 16,
+      "wna": 7,
+      "number": "RPMP.07.01.01-0006/20-001",
+      "dateOfAcceptation": "2020-05-17",
+      "certyfied": "N",
+      "totalExpenses": 1512585,
+      "eligibleExpenditure": 1157212,
+      "confirmedEligibleExpenditure": 1157212,
+      "funding": 1000000,
+      "income": 0
     }
   ],
-  "irregularities":[
+  "irregularities": [
     {
-      "id":1,
-      "dateOfCreation":"2020-07-02",
-      "dateOfIrregularity":"2020-02-04",
-      "beneficiary":{
-        "id":1,
-        "name":"Firma ABC",
-        "nip":"5310732355"
+      "id": 1,
+      "dateOfCreation": "2020-07-02",
+      "dateOfIrregularity": "2020-02-04",
+      "beneficiary": {
+        "id": 1,
+        "name": "Firma ABC",
+        "nip": "5310732355"
       },
-      "wna":"RPMP.01.01.01-0001/20",
-      "podst_niepr_id":2,
-      "rodzaj_n_Id":[1,2],
-      "descriptionOfIrr":"Łooo panie, ale narobili bigosu!!!!",
-      "totalIrregularityAmmount":31454,
-      "EUFounding":27500,
-      "creator":"ala@test.pl"
+      "wna": "RPMP.01.01.01-0001/20",
+      "podst_niepr_id": 2,
+      "rodzaj_n_Id": [
+        1,
+        2
+      ],
+      "descriptionOfIrr": "Łooo panie, ale narobili bigosu!!!!",
+      "totalIrregularityAmmount": 31454,
+      "EUFounding": 27500,
+      "creator": "ala@test.pl"
     },
     {
-      "id":2,
-      "dateOfCreation":"2020-07-12",
-      "dateOfIrregularity":"2020-04-04",
-      "beneficiary":{
-        "id":1,
-        "name":"Firma ABC",
-        "nip":"5310732355"
+      "id": 2,
+      "dateOfCreation": "2020-07-12",
+      "dateOfIrregularity": "2020-04-04",
+      "beneficiary": {
+        "id": 1,
+        "name": "Firma ABC",
+        "nip": "5310732355"
       },
-      "wna":"RPMP.01.01.01-0001/20",
-      "podst_niepr_id":1,
-      "rodzaj_n_Id":[1,3],
-      "descriptionOfIrr":"Łooo panie, ale narobili jeszcze większego bigosu bigosu!!!!",
-      "totalIrregularityAmmount":131454,
-      "EUFounding":107500,
-      "creator":"ala@test.pl"
+      "wna": "RPMP.01.01.01-0001/20",
+      "podst_niepr_id": 1,
+      "rodzaj_n_Id": [
+        1,
+        3
+      ],
+      "descriptionOfIrr": "Łooo panie, ale narobili jeszcze większego bigosu bigosu!!!!",
+      "totalIrregularityAmmount": 131454,
+      "EUFounding": 107500,
+      "creator": "ala@test.pl"
     }
   ]
 }

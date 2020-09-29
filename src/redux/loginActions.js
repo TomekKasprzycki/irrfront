@@ -25,12 +25,13 @@ const logoutProcess = () => ({
 const getUser = async (userDto) => {
     const url = 'http://localhost:3001/users'
 
-    return fetch(url + "?email=" + `${userDto.email}`, {
+    return fetch(url + '?email=' + userDto.email, {
         method: 'GET', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',
           'TYPE': 'Login',
-        }})
+        }
+      })
         .then(result => result.json())
         .then(result => result[0])
         .then(result => result.token)

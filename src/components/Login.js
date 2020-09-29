@@ -12,8 +12,8 @@ const Login = ({ user, login, logout, getDocs, getTypes }) => {
         email: '',
         password: '',
         password2: '',
-        roleId: '',
-        token: ''
+        roleName: '',
+        active: ''
       }
     
       const hadnleOnSubmit = (e) => {

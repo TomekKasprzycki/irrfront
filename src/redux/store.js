@@ -4,13 +4,13 @@ import thunk from 'redux-thunk'
 import { logger } from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import storageSession from 'redux-persist/lib/storage/session'
 
 // https://www.npmjs.com/package/redux-persist
 
 const persistConfig = {
   key: 'root',
-  storage,
+  storage: storageSession
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)
