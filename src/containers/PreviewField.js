@@ -1,4 +1,4 @@
-import PreviewField from '../components/PreviewField';
+import PreviewField from '../components/IrrPreview/PreviewField/PreviewField';
 import { connect } from 'react-redux';
 
 const mapState = (state, ownProps) => ({

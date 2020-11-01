@@ -1,4 +1,4 @@
-import Login from '../components/Login';
+import Login from '../components/Login/Login';
 import { connect } from 'react-redux';
 import { loginUser, logoutProcess } from '../redux/loginActions'
 import { fetchAllTypes, fetchAllDocs } from '../redux/dropListsActions'

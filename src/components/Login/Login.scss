@@ -1,0 +1,10 @@
+@import './../../variables';
+
+.login {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.login-button{
+    background-color: $buttonColor
+}

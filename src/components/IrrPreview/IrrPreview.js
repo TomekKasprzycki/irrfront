@@ -2,8 +2,8 @@ import React, { useEffect, useState, useCallback } from 'react';
 import {
     Redirect
   } from 'react-router-dom';
-import PreviewField from '../containers/PreviewField'
-import {store} from '../redux/store'
+import PreviewField from '../../containers/PreviewField'
+import {store} from '../../redux/store'
 
 
 const IrrPreview = ({ user, irr_docs, irr_types }) => {
@@ -33,7 +33,7 @@ const IrrPreview = ({ user, irr_docs, irr_types }) => {
     
     return (
         user.email !== '' ? 
-        <div className="fontStyle">
+        <div className="">
             {irr.map(irrItem => <PreviewField irrItem={irrItem} />) }            
         </div>
         :

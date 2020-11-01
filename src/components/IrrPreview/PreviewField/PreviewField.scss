@@ -1,0 +1,21 @@
+@import './../../../variables';
+
+.irrPreview {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 5px;
+  
+}
+
+@media (max-width: $md) {
+    .irrPreview{
+        font-size: 12px;
+    }
+
+}
+@media (max-width: $sm) {
+    .irrPreview{
+        font-size: 10px;
+    }
+}

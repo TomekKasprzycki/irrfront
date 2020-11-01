@@ -2,12 +2,12 @@ import React, { useEffect, useState, useCallback } from 'react';
 import {
     Redirect
   } from 'react-router-dom';
-import UserInfo from './UserInfo';
-import '../styles/UserTable.css'
+import UserInfo from './UserInfo/UserInfo';
+
 
 const AdminPanel = ({ user }) => {
 
-    const [users, setUsers] = useState([])  
+    const [users, setUsers] = useState([])
     
     const getUsers = useCallback(async  () => {
         
@@ -22,16 +22,20 @@ const AdminPanel = ({ user }) => {
             }})
             .then(result => result.json())
             
-            
-        }, [user.token])
+    }, [user.token])
 
-        useEffect(() => { document.title = "Panel administracyjny";
-        getUsers().then(result => setUsers(result)) }, [getUsers])
+    useEffect(() => { document.title = "Panel administracyjny";
+    getUsers().then(result => setUsers(result)) }, [getUsers])
 
     const handleOnLoad = async () => {
-
         setUsers(await getUsers())
-        
+    }
+
+    const deleteUser = (userId) => {
+        console.log(userId)
+        const filterdUsers = users.filter(user => user.id !== userId)
+        console.log(filterdUsers)
+        setUsers(filterdUsers)
     }
 
 
@@ -49,7 +53,7 @@ const AdminPanel = ({ user }) => {
                         <th className="tdStyle">Usuń</th>
                         <th className="tdStyle">Zmień rolę</th>
                     </tr>
-                    {users.map(appUser => { return <UserInfo user={appUser} />} )}
+                    {users.map(appUser => { return <UserInfo user={appUser} deleteUser={deleteUser} />} )}
                 </tbody>
             </table>
             <button onClick={handleOnLoad} >Naduś</button>
@@ -59,7 +63,7 @@ const AdminPanel = ({ user }) => {
         : user.email === '' ?
         <Redirect from="/preview" to="/login" />
         :
-        <Redirect from="preview" to ="/" />
+        <Redirect from="/preview" to ="/" />
             
         )
 

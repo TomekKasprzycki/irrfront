@@ -1,4 +1,4 @@
-import IrrPreview from '../components/IrrPreview';
+import IrrPreview from '../components/IrrPreview/IrrPreview';
 import { connect } from 'react-redux';
 
 const mapState = (state) => ({

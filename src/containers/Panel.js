@@ -1,4 +1,4 @@
-import Panel from '../components/Panel';
+import Panel from '../components/Panel/Panel';
 import { connect } from 'react-redux';
 
 const mapState = (state) => ({

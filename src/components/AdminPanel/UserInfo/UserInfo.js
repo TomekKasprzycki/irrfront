@@ -1,13 +1,12 @@
 import React from 'react';
-import '../styles/UserTable.css'
 
-const UserInfo = ({ user }) => {
+
+const UserInfo = ({ user, deleteUser }) => {
 
     const handleOnClick = (e) => {
         console.log(e.target.id.substring(6))
     }
 
-    
 
     return(
         
@@ -17,7 +16,7 @@ const UserInfo = ({ user }) => {
             <td className="tdStyle">{user.email}</td>
             <td className="tdStyle">{user.roleId}</td>
             <td className="tdStyle">{user.institution}</td>
-            <td><button onClick={handleOnClick} id={"delete" + user.id} className="buttonDeleteTable">Usuń</button></td>
+            <td><button onClick={() => deleteUser(user.id)} id={"delete" + user.id} className="buttonDeleteTable">Usuń</button></td>
             <td><button onClick={handleOnClick} id={"update" + user.id} className="buttonRoleTable">Zmień</button></td>
         </tr>
     )

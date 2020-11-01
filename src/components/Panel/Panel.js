@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import "./Panel.scss"
 
 const Panel = ({ user }) => {
 
@@ -10,9 +11,9 @@ const Panel = ({ user }) => {
 
 
     return(
-        <div onEnded className='fontStyle smallFont panel'>
-            <p className="links"><NavLink exact to="/" activeStyle={activeLink}>Strona główna</NavLink></p>
-            <p className="links"><NavLink exact to="/login" activeStyle={activeLink}>Zaloguj</NavLink></p>
+        <div className='panel-main'>
+            <p className="links"><NavLink exact to="/main" activeStyle={activeLink}>Strona główna</NavLink></p>
+            <p className="links"><NavLink exact to="/" activeStyle={activeLink}>Zaloguj</NavLink></p>
             <p className="links"><NavLink exact to="/registration" activeStyle={activeLink}>Zarejestruj</NavLink></p>
             {user.email !== '' ?
             <p className="links"><NavLink exact to="/preview" activeStyle={activeLink}>Przegląd nieprawidłowości</NavLink></p> : "" }
