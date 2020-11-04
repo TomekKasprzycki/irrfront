@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Redirect } from 'react-router';
 import './Login.scss'
 
-const Login = ({ user, login, logout, getDocs, getTypes, onLoad }) => {
+const Login = ({ user, login, getDocs, getTypes, onLoad }) => {
 
   useEffect(()=>{ document.title="Strona logowania" },[])
   
@@ -9,7 +10,8 @@ const Login = ({ user, login, logout, getDocs, getTypes, onLoad }) => {
     
       const hadnleOnSubmit = (e) => {
         e.preventDefault();
-        login(userDto);
+        if(userDto.email!=='') {
+        login(userDto);}
       }
 
       const handleOnChange = (e) => {
@@ -23,33 +25,28 @@ const Login = ({ user, login, logout, getDocs, getTypes, onLoad }) => {
       }
 
       if (user.email !== '') {
-        console.log("pobieram do drop list")
         getDocs();
         getTypes();
       }
       
-      onLoad(user)
-
-      const handleLogout = () => {
-        logout();
-      }
-    
+      onLoad(user)    
     
       return (
           user.email === '' ?
-        
-            <form className="login" onSubmit={hadnleOnSubmit}>
-              <div >Login:</div> 
-              <div><input onChange={handleOnChange} type="text" id="loginID" name="email" /></div>
-              <div>Password:</div>
-              <div><input onChange={handleOnChange} type="password" id="passID" name="password" /></div>
+        <div className='login-main'>
+            <form className='login-form' onSubmit={hadnleOnSubmit}>
+              <div className='login'>
+                <div className='login-label' >Login:</div> 
+                <div className='login-input-div'><input className='login-input' onChange={handleOnChange} type="text" name="email" /></div>
+                <div className='login-label'>Password:</div>
+                <div className='login-input-div'><input className='login-input' onChange={handleOnChange} type="password" name="password" /></div>
+              </div>
               <button className="login-button" type="submit" >Zaloguj</button>
             </form>
-         :
-        <div className="">
-          <h1 className="">Witaj {user.name}! </h1>
-          <button className="" type="submit" onClick={handleLogout} >Wyloguj</button>
+            
         </div>
+         :
+        <Redirect to="/main"/>
       );
 }
 

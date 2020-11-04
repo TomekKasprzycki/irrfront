@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.scss';
-import logo from './../../img/logo.png'
 
-const Header = ({ user }) => {
+
+const Header = ({ user, logout }) => {
+
+const [buttonVisible, setButtonVisible] = useState(false)
+
+const handleOnClick = (e) => {
+    setButtonVisible(!buttonVisible)
+}
+
+const handleLogout = () => {
+    logout();
+    window.location.href='/';
+}
 
 return (
     <div className='header'>
-        <img className="header-img" src={logo} alt="logo"/>
         <div className='header-wrap'>
-        <h1 className="header-title">System raportowania nieprawidłowości  </h1>
-        <div className="header-user">Użytkownik zalogowany: {user.email !== '' ? user.name : 'brak'}</div>
+            <h1 className="header-title">System raportowania o nieprawidłowościach  </h1>
+            <div className="header-user" >
+                <div onClick={handleOnClick}>Użytkownik zalogowany: {user.email !== '' ? user.name : 'brak'}</div>
+                {buttonVisible && <div><button className='header-logout-shown' onClick={handleLogout} >Wyloguj</button></div>}
+            </div>
         </div>
     </div>
 )}

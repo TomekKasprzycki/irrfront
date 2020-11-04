@@ -1,10 +1,49 @@
 @import './../../variables';
 
+.login-main {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .login {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 30% 70%;
+    
+}
+
+.login-form {
+    width: 300px;
+}
+
+.login-label {
+    padding: 10px;
+    text-align: right;
+}
+
+.login-input-div {
+    padding: 10px;
+}
+
+.login-input {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    background-color: rgb(225, 250, 255);
+    width: 300px;
 }
 
 .login-button{
-    background-color: $buttonColor
+    height: 50px;
+    background-color: $buttonColor;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    justify-self: center;
+
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);   
 }
