@@ -1,0 +1,10 @@
+.mainIrrPrev {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 5px;
+    column-gap: 15px;
+}
+
+.mainIrrPrevLeft{
+    text-align: right;
+}

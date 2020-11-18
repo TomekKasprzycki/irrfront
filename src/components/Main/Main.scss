@@ -1,13 +1,42 @@
-// @import './../../variables'
+@import './../../variables';
 
+.main {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
 
+    &-part{
+        display: grid;
+    }
 
-button {
-    background-color: cornflowerblue ;
+    &-admin{
+        display: grid;
+        grid-auto-rows: max-content;
+    }
+
+}
+
+.button {
+    background-color: $buttonColor;
     width: 250px;
     height: 75px;
     border-radius: 4px;
     margin: 10px;
-    border-bottom: 5px black;
+    box-shadow: 3px 3px gray;
+}
 
+.button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.button:active {
+  background-color:darkblue;
+  box-shadow: -3px -3px gray;
+  transform: translate(3px 3px);
+}
+
+.button-select {
+    max-width: 100px;
+    border-top: 1px solid black;
+    background-color: lightblue;
 }

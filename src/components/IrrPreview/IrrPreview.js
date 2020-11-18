@@ -6,7 +6,7 @@ import PreviewField from '../../containers/PreviewField'
 import {store} from '../../redux/store'
 
 
-const IrrPreview = ({ user, irr_docs, irr_types }) => {
+const IrrPreview = ({ user }) => {
 
     console.log(store.getState())
 
