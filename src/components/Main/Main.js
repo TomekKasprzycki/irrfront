@@ -10,26 +10,40 @@ const Main = ({ user }) => {
         document.title = "Strona główna"
     },[])
 
-    const [irrId, setIrrId] = useState('null');
+    const [idList, setIdList] = useState([])
+    const [irrId, setIrrId] = useState(false);
     const [irrObj, setIrrObj] = useState({id:''});
+    
+    const takeAllIrr = async () => {
+        const url ="http://localhost:3001/irregularities"
 
-    const handleOnClick = (e) => {
+        const data = await fetch(url);
+        const irrArray = await data.json();
+        const createdIdList = irrArray.map(irr => irr.id)
+
+        return createdIdList;
+    }
+    
+    idList.length === 0 && takeAllIrr().then(res => setIdList(res))
+    
+    const handleOnChange = (e) => {
         e.stopPropagation();
-        setIrrId(e.target.value);
+        setIrrId(true);
+        console.log(irrId)
+        if (e.target.value !== 'null') {
+            selectIrr(e.target.value).then(result => setIrrObj(result))
+            } 
     }
 
     const handleButtonClick = () => {
-        console.log(irrId + " is " + typeof(irrId))
-        console.log(irrId !== 'null')
-        if (irrId !== 'null') {
-            console.log("???")
-        selectIrr().then(result => setIrrObj(result))
-        } else {
-        alert("Nie wybrano nieprawidłowości!")}
+
+
     }
 
-    const selectIrr = async () => {
-        const url ="http://localhost:3001/irregularities?id=" + irrId
+
+
+    const selectIrr = async (id) => {
+        const url ="http://localhost:3001/irregularities?id=" + id
 
         const data = await fetch(url);
         const irrArray = await data.json();
@@ -47,10 +61,9 @@ const Main = ({ user }) => {
                 <button className='button'>Wprowadź nową nieprawidłowość</button>
                 <div>
                     <button onClick={handleButtonClick} className='button'>Wprowadź zmiany w nieprawidłowości nr
-                    <select className='button-select' onClick={(handleOnClick)} >
-                        <option value='null'>-- wybierz --</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
+                    <select className='button-select' onChange={(handleOnChange)} >
+                        {!irrId && <option value='null'>-- wybierz --</option>}
+                        {idList.map(id => <option value={id}>{id}</option>)}
                     </select></button>
 
                 </div>

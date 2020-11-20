@@ -8,7 +8,7 @@ const NotFound = ({ user }) => {
             <h1>Błąd 404</h1>
             <h3>Strona o podanym adresie nie istnieje!</h3>
             {user.email==='' ? <Link to="/">Wróć do strony głównej</Link>
-            : <Link to="/main">Wróć do strony głównej</Link>  }
+            : <Link to="/">Wróć do strony głównej</Link>  }
         </div>
     )
 }

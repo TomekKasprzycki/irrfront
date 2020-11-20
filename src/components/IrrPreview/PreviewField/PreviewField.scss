@@ -3,9 +3,14 @@
 .irrPreview {
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 25% auto;
     grid-row-gap: 5px;
+    column-gap: 15px;
   
+}
+
+.irrPreview-label {
+    text-align: right;
 }
 
 @media (max-width: $md) {

@@ -3,18 +3,19 @@ import {
     Redirect
   } from 'react-router-dom';
 import PreviewField from '../../containers/PreviewField'
-import {store} from '../../redux/store'
+import axios from 'axios';
 
 
 const IrrPreview = ({ user }) => {
 
-    console.log(store.getState())
-
-    const [irr, setIrr] = useState([])
+    const [irr, setIrr] = useState([]);
+    const [page, setPage] = useState(0);
 
     const getIrregularities = useCallback (() => {
         const url = "http://localhost:3001/irregularities"
 
+        console.log('uruchomiony fetch')
+        
         return fetch(url, {
             method: "GET",
             headers: {
@@ -24,17 +25,30 @@ const IrrPreview = ({ user }) => {
             .then(result => result.json())
     }, [user.token])
 
+    if (irr.length === 0) { 
+        console.log('pobieram');
+        getIrregularities().then(result => setIrr(result)); 
+    }
+
     useEffect(() => {
         document.title = "Przegląd nieprawidłowości";
+     
+    },[])
 
-        getIrregularities().then(result => setIrr(result))
-    },[getIrregularities])
+
+    const irrItem = irr[page]
+    
+    const setPageNumber = (number) => {
+        setPage(number);
+    }
+
+    console.log(irr)
 
     
     return (
         user.email !== '' ? 
         <div className="">
-            {irr.map(irrItem => <PreviewField irrItem={irrItem} />) }            
+            <PreviewField irrItem={irrItem} changePage={setPageNumber} maxPage={irr.length} readOnly={false} />         
         </div>
         :
         <Redirect from="/preview" to="/login" />

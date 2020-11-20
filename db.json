@@ -394,6 +394,26 @@
       "totalIrregularityAmmount": 131454,
       "EUFounding": 107500,
       "creator": "ala@test.pl"
+    },
+    {
+      "id": 3,
+      "dateOfCreation": "2020-11-19",
+      "dateOfIrregularity": "2019-05-12",
+      "beneficiary": {
+        "id": 3,
+        "name": "Powiat ABC",
+        "nip": "6011089998"
+      },
+      "wna": "RPMP.03.01.01-0121/20",
+      "podst_niepr_id": 3,
+      "rodzaj_n_Id": [
+        2,
+        3
+      ],
+      "descriptionOfIrr": "Kasia zjadła moje śniadanie! Kasia zjadła moje śniadanie! Kasia zjadła moje śniadanie! Kasia zjadła moje śniadanie! Kasia zjadła moje śniadanie! Kasia zjadła moje śniadanie! Kasia zjadła moje śniadanie! ",
+      "totalIrregularityAmmount": 131454,
+      "EUFounding": 107500,
+      "creator": "ala@test.pl"
     }
   ]
 }

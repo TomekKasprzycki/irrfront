@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./PreviewField.scss"
 
-const PreviewFild = ({ irr_types, irr_docs, irrItem }) => {
+const PreviewFild = ({ irr_types, irr_docs, irrItem, changePage, maxPage, readOnly }) => {
 
 
     const compareArrays = (x, y) => {
@@ -17,29 +17,42 @@ const PreviewFild = ({ irr_types, irr_docs, irrItem }) => {
         return result
     }
 
-    const typesToRender = compareArrays(irrItem.rodzaj_n_Id, irr_types);
-
-    console.log("irrItem")
     console.log(irrItem)
 
-    return (
-        <div className="irrPreview">
+    const [description, setDescription] = useState(irrItem.descriptionOfIrr)
 
-                <div className="">NIP:</div>
-                <div className="">{irrItem.beneficiary.nip}</div>
-                <div className="">Nazwa beneficjenta:</div>
-                <div className="">{irrItem.beneficiary.name}</div>
-                <div className="">Numer projektu:</div>
-                <div className="">{irrItem.wna}</div>
-                <div className="">Opis nieprawidłowości:</div>
-                <div className="">{irrItem.descriptionOfIrr}</div>
-                <div className="">Tu będzie lista WNP</div>
-                <div>Tu będzie lista...</div>
-                <div className="">Rodzaj nieprawidłowości:</div>
-                <div className="">{typesToRender.map(irr_type => <span> {irr_type.name} <br /></span>)}</div>
-                <div className="">Podstawa stwierdzenia:</div>
-                <div className="">{irr_docs.filter(irr_doc => irr_doc.id === irrItem.podst_niepr_id).map(irr_doc => irr_doc.name)}</div>
-           
+    const handleOnChange = (e) => {
+        if (readOnly) {setDescription(e.target.value)} 
+        
+    }
+
+    const typesToRender = compareArrays(irrItem.rodzaj_n_Id, irr_types);
+
+
+    return (
+        <div>
+            <div className="irrPreview">
+
+                    <div className="irrPreview-label">NIP:</div>
+                    <div className="">{irrItem.beneficiary.nip}</div>
+                    <div className="irrPreview-label">Nazwa beneficjenta:</div>
+                    <div className="">{irrItem.beneficiary.name}</div>
+                    <div className="irrPreview-label">Numer projektu:</div>
+                    <div className="">{irrItem.wna}</div>
+                    <div className="irrPreview-label">Opis nieprawidłowości:</div>
+                    <input className="" value={description} onChange={handleOnChange}/>
+                    <div className="irrPreview-label">Tu będzie lista WNP</div>
+                    <div>Tu będzie lista...</div>
+                    <div className="irrPreview-label">Rodzaj nieprawidłowości:</div>
+                    <div className="">{typesToRender.map(irr_type => <span> {irr_type.name} <br /></span>)}</div>
+                    <div className="irrPreview-label">Podstawa stwierdzenia:</div>
+                    <div className="">{irr_docs.filter(irr_doc => irr_doc.id === irrItem.podst_niepr_id).map(irr_doc => irr_doc.name)}</div>
+            
+            </div>
+            <div>
+                <button>Poprzedni</button>
+                <button>Następny</button>
+            </div>
         </div>
     )
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 const mapState = (state, ownProps) => ({
     irrItem: ownProps.irrItem,
+    
     irr_docs: state.irr_docs,
     irr_types: state.irr_types
 })
