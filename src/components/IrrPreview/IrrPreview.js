@@ -10,10 +10,7 @@ const IrrPreview = ({ user }) => {
     const [irr, setIrr] = useState([]);
     const [page, setPage] = useState(0);
 
-    useEffect(() => {
-        document.title = "Przegląd nieprawidłowości";
-     
-    },[])
+
 
     const getIrregularities = useCallback (async () => {
 
@@ -30,10 +27,10 @@ const IrrPreview = ({ user }) => {
 
     }, [user.token])
 
-    if (irr.length === 0) { 
-        console.log('pobieram');
+    useEffect(() => {
+        document.title = "Przegląd nieprawidłowości";
         getIrregularities(); 
-    }
+    },[getIrregularities])
 
     const irrItem = irr[page]
     
