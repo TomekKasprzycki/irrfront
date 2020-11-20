@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import "./PreviewField.scss"
 
-const PreviewFild = ({ irr_types, irr_docs, irrItem, changePage, maxPage, readOnly }) => {
+const PreviewFild = ({ irr_types, irr_docs, irrItem, pageUp, pageDown, maxPage, currentPage, readOnly }) => {
 
+    const [description, setDescription] = useState(irrItem.descriptionOfIrr)
+
+    if (description !== irrItem.descriptionOfIrr) {setDescription(irrItem.descriptionOfIrr)}
 
     const compareArrays = (x, y) => {
 
@@ -14,12 +17,9 @@ const PreviewFild = ({ irr_types, irr_docs, irrItem, changePage, maxPage, readOn
                 }
             }
         }
+        
         return result
     }
-
-    console.log(irrItem)
-
-    const [description, setDescription] = useState(irrItem.descriptionOfIrr)
 
     const handleOnChange = (e) => {
         if (readOnly) {setDescription(e.target.value)} 
@@ -50,8 +50,8 @@ const PreviewFild = ({ irr_types, irr_docs, irrItem, changePage, maxPage, readOn
             
             </div>
             <div>
-                <button>Poprzedni</button>
-                <button>Następny</button>
+                {currentPage === 0 ?  <button>Poprzedni</button> : <button onClick={pageDown} >Poprzedni</button>}
+                {currentPage === maxPage ? <button>Następny</button> : <button onClick={pageUp}>Następny</button>}
             </div>
         </div>
     )

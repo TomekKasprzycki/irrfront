@@ -3,7 +3,6 @@ import {
     Redirect
   } from 'react-router-dom';
 import PreviewField from '../../containers/PreviewField'
-import axios from 'axios';
 
 
 const IrrPreview = ({ user }) => {
@@ -11,44 +10,52 @@ const IrrPreview = ({ user }) => {
     const [irr, setIrr] = useState([]);
     const [page, setPage] = useState(0);
 
-    const getIrregularities = useCallback (() => {
-        const url = "http://localhost:3001/irregularities"
+    useEffect(() => {
+        document.title = "Przegląd nieprawidłowości";
+     
+    },[])
 
-        console.log('uruchomiony fetch')
+    const getIrregularities = useCallback (async () => {
+
+        const url = "http://localhost:3001/irregularities"
         
-        return fetch(url, {
+        fetch(url, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': user.token,
             }})
             .then(result => result.json())
+            .then(result => setIrr(result))
+
     }, [user.token])
 
     if (irr.length === 0) { 
         console.log('pobieram');
-        getIrregularities().then(result => setIrr(result)); 
+        getIrregularities(); 
     }
-
-    useEffect(() => {
-        document.title = "Przegląd nieprawidłowości";
-     
-    },[])
-
 
     const irrItem = irr[page]
     
-    const setPageNumber = (number) => {
-        setPage(number);
+    const pageUp = () => {
+        setPage(page + 1);
     }
 
-    console.log(irr)
+    const pageDown = () => {
+        setPage(page - 1)
+    }
 
     
     return (
         user.email !== '' ? 
         <div className="">
-            <PreviewField irrItem={irrItem} changePage={setPageNumber} maxPage={irr.length} readOnly={false} />         
+            {irr.length !== 0 && <PreviewField 
+                                    irrItem={irrItem} 
+                                    pageUp={pageUp} 
+                                    pageDown={pageDown} 
+                                    maxPage={irr.length - 1} 
+                                    currentPage={page} 
+                                    readOnly={false} />}
         </div>
         :
         <Redirect from="/preview" to="/login" />
