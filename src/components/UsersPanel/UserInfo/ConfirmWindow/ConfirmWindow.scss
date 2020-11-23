@@ -1,0 +1,41 @@
+.confirmWindow-main {
+    position: fixed;
+    top: 100px;
+    left: 500px;
+    height: 150px;
+    width: 300px;
+    border-radius: 5px;
+    border: 2px solid darkblue;
+    background-color: white;
+    opacity: 1;
+}
+
+.confirmWindow-header {
+    background-color: lightskyblue;
+    text-align: center;
+    padding: 4px;
+    font-weight: 750;
+    font-size: 16px;
+    height: 24px;
+    border-bottom: 1px solid darkblue;
+}
+
+.confirmWindow-contents {
+    padding: 10px;
+}
+
+.confirmWindow-buttons {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.confirmWindow-button-yes {
+    background-color: coral;
+    border-radius: 3px;
+}
+
+.confirmWindow-button-no {
+    background-color: lightseagreen;
+    border-radius: 3px;
+}
+

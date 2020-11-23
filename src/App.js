@@ -15,7 +15,7 @@ import Registration from './components/Registration/Registration';
 import Panel from './containers/Panel';
 import Header from './containers/Header';
 import IrrPreview from './containers/IrrPreview';
-import AdminPanel from './containers/AdminPanel';
+import UsersPanel from './containers/UsersPanel';
 import Footer from './components/Footer/Footer'
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -46,7 +46,7 @@ const App = () => {
               <Route path="/PageNotFoundError" component={NotFound} />
               {isAuthenticated && <Route exact path="/main" component={Main} appProps={{ isAuthenticated }} />}
               {isAuthenticated && <Route path="/preview" component={IrrPreview} appProps={{ isAuthenticated }} />}
-              {isAuthenticated && <Route path="/adminpanel" component={AdminPanel} appProps={{ isAuthenticated }} />}
+              {isAuthenticated && <Route path="/userspanel" component={UsersPanel} appProps={{ isAuthenticated }} />}
               <Redirect from="*" to="/PageNotFoundError" />
             </Switch>
 

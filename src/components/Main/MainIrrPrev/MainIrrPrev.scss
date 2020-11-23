@@ -1,10 +1,18 @@
 .mainIrrPrev {
+    padding: 10px;
     display: grid;
     grid-template-columns: auto auto;
     grid-row-gap: 5px;
     column-gap: 15px;
 }
 
-.mainIrrPrevLeft{
+.mainIrrPrev-left{
     text-align: right;
+}
+
+.mainIrrPrev-right {
+    border: 1px solid darkgray;
+    background-color: lightblue;
+    border-left: 2px solid darkgray;
+    border-top: 2px solid darkgray;
 }

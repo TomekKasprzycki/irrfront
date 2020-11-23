@@ -37,9 +37,13 @@ const Login = ({ user, login, getDocs, getTypes, onLoad }) => {
             <form className='login-form' onSubmit={hadnleOnSubmit}>
               <div className='login'>
                 <div className='login-label' >Login:</div> 
-                <div className='login-input-div'><input className='login-input' onChange={handleOnChange} type="text" name="email" /></div>
+                <div className='login-input-div'>
+                  <input className='login-input' onChange={handleOnChange} type="text" name="email" />
+                </div>
                 <div className='login-label'>Password:</div>
-                <div className='login-input-div'><input className='login-input' onChange={handleOnChange} type="password" name="password" /></div>
+                <div className='login-input-div'>
+                  <input className='login-input' onChange={handleOnChange} type="password" name="password" />
+                </div>
               </div>
               <button className="login-button" type="submit" >Zaloguj</button>
             </form>

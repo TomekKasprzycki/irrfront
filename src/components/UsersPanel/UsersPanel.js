@@ -1,18 +1,16 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import {
-    Redirect
-  } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import UserInfo from './UserInfo/UserInfo';
+import './UsersInfo.scss'
 
 
-const AdminPanel = ({ user }) => {
+const UsersPanel = ({ user }) => {
 
     const [users, setUsers] = useState([])
     
     const getUsers = useCallback(async  () => {
         
         const url = "http://localhost:3001/users"
-        console.log(user.token)
         
         return fetch(url, {
             method: "GET",
@@ -21,28 +19,44 @@ const AdminPanel = ({ user }) => {
                 'Authorization': user.token,
             }})
             .then(result => result.json())
+            .then(result => setUsers(result))
             
     }, [user.token])
 
-    useEffect(() => { document.title = "Panel administracyjny";
-    getUsers().then(result => setUsers(result)) }, [getUsers])
+    const deleteUserFromDB = useCallback(async  (userToDelete) => {
+        
+        const url = "http://localhost:3001/users/" + userToDelete.id
+        
+        return fetch(url, {
+            method: "DELETE",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': user.token,
+            }})
+            
+    }, [user.token])
 
-    const handleOnLoad = async () => {
-        setUsers(await getUsers())
+    useEffect(() => { 
+        document.title = "Panel administracyjny";
+        getUsers(); }
+        , [getUsers])
+
+    const handleOnLoad = () => {
+         getUsers();
     }
 
-    const deleteUser = (userId) => {
-        console.log(userId)
-        const filterdUsers = users.filter(user => user.id !== userId)
-        console.log(filterdUsers)
-        setUsers(filterdUsers)
+    const deleteUser = (userToDelete) => {
+
+        deleteUserFromDB(userToDelete);
+        getUsers();
     }
 
 
     return (
         user.roleId === 'ROLE_ADMIN' ? 
-        <div className="fontStyle mainDiv" >
-            <table className="tableStyle">
+        <div className="userspanel" >
+            <table className="userspanel-table">
             
                 <tbody>
                     <tr>
@@ -53,7 +67,7 @@ const AdminPanel = ({ user }) => {
                         <th className="tdStyle">Usuń</th>
                         <th className="tdStyle">Zmień rolę</th>
                     </tr>
-                    {users.map(appUser => { return <UserInfo user={appUser} deleteUser={deleteUser} />} )}
+                    {users.map(appUser => { return <UserInfo id={appUser.id} user={appUser} deleteUser={deleteUser} />} )}
                 </tbody>
             </table>
             <button onClick={handleOnLoad} >Naduś</button>
@@ -69,4 +83,4 @@ const AdminPanel = ({ user }) => {
 
 }
 
-export default AdminPanel;
+export default UsersPanel;

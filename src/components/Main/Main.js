@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import './Main.scss'
+import { useHistory } from 'react-router-dom';
+import './Main.scss';
 import MainIrrPrev from './MainIrrPrev/MainIrrPrev';
-import { Link } from 'react-router-dom';
 
 
 const Main = ({ user }) => {
@@ -10,6 +10,7 @@ const Main = ({ user }) => {
         document.title = "Strona główna"
     },[])
 
+    const history = useHistory();
     const [idList, setIdList] = useState([])
     const [irrId, setIrrId] = useState(false);
     const [irrObj, setIrrObj] = useState({id:''});
@@ -73,13 +74,23 @@ const Main = ({ user }) => {
             <div>
                 {irrObj.id !== '' ?
                 <MainIrrPrev irr={irrObj}/> :
-                <div>Nie wybrano nieprawidłowości</div>}
+                <div className='main-not-selected'>Nie wybrano nieprawidłowości</div>}
             </div>
             {user.roleId === 'ROLE_ADMIN' && <div className='main-admin'>
-                <Link to="/preview">
-                <button className='button'>Przeglądaj nieprawidłowości</button>
-                </Link>
-                <button className='button'>Panel administracyjny</button>
+                <div>
+                    <button className='button' 
+                            onClick={()=>history.push('/preview')}>Przeglądaj nieprawidłowości</button>
+                    <button className='button'
+                            onClick={()=>history.push('/')}>Generuj raporty</button>
+                    <button className='button'
+                            onClick={()=>history.push('/')}>Przywróć sprawę</button>
+                </div>
+                <div>
+                    <button className='button'
+                            onClick={()=>history.push('/userspanel')}>Zarządzaj użytkownikami</button>
+                    <button className='button'
+                            onClick={()=>history.push('/')}>Panel administracyjny</button>
+                </div>
             </div>}
             
 

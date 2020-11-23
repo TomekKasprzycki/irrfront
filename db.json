@@ -49,9 +49,42 @@
       "institution": "UMWM - BC",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVkd2lrIiwiZW1haWwiOiJ0ZXN0QHRlc3QucGwiLCJyb2xlSWQiOiJST0xFX09CU0VSVkVSIiwiaW5zdGl0dXRpb24iOiJVTVdNIC0gQkMifQ.e1B3y5AqEv25eaqW6uuUtNFypH0wUKR6t2gAk5U3bVo",
       "id": 5
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "ROLE_ADMIN"
     },
     {
-      "id": 6
+      "id": 2,
+      "name": "ROLE_USER"
+    },
+    {
+      "id": 3,
+      "name": "ROLE_OBSERVER"
+    }
+  ],
+  "institutions": [
+    {
+      "id": 1,
+      "name": "UMWM - ZPO"
+    },
+    {
+      "id": 2,
+      "name": "UMWM - FE"
+    },
+    {
+      "id": 3,
+      "name": "UMWM - BC"
+    },
+    {
+      "id": 4,
+      "name": "MCP"
+    },
+    {
+      "id": 5,
+      "name": "WUP"
     }
   ],
   "podst_niepr": [
