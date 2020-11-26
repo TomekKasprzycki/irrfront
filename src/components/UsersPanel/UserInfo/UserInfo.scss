@@ -1,7 +1,6 @@
 
 tr.userinfo-row td{
     border-bottom: 1px dotted black;
-
 }
 
 .userinfo-button-delete {
@@ -16,5 +15,10 @@ tr.userinfo-row td{
 
 .userinfo-button-save {
     background-color: lightgreen;
+    width: 75px;
+}
+
+.userinfo-button-cancel {
+    background-color: lightyellow;
     width: 75px;
 }

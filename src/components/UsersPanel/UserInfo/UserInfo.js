@@ -16,7 +16,6 @@ const UserInfo = ({ user, deleteUser }) => {
     const getRoles = useCallback(async  () => {
         
         const url = "http://localhost:3001/roles"
-        console.log(user.token)
         
         fetch(url, {
             method: "GET",
@@ -32,7 +31,6 @@ const UserInfo = ({ user, deleteUser }) => {
     const getInstitutions = useCallback(async  () => {
         
         const url = "http://localhost:3001/institutions"
-        console.log(user.token)
         
         fetch(url, {
             method: "GET",
@@ -60,7 +58,7 @@ const UserInfo = ({ user, deleteUser }) => {
         })
 
             
-    }, [user.token])
+    }, [user])
 
     const handleOnClick = (e) => {
         setToEdit(true)
@@ -70,27 +68,48 @@ const UserInfo = ({ user, deleteUser }) => {
 
     const handleOnRoleChanege = (e) => {
         setUserRole(e.target.value)
-        user.roleId = e.target.value
+        // user.roleId = e.target.value
     }
 
     const handleOnInstitutionChanege = (e) => {
         setUserInstitution(e.target.value)
-        user.institution = e.target.value
+        // user.institution = e.target.value
     }
 
     const handleOnNameChange = (e) => {
         setUserName(e.target.value)
-        user.name = e.target.value;
+        // user.name = e.target.value;
     }
 
     const handleOnEmailChange = (e) => {
         setUserEmail(e.target.value)
-        user.email = e.target.value;
+        // user.email = e.target.value;
     }
 
+    const handleOnCancel = () => {
+        setUserName(user.name)
+        setUserEmail(user.email)
+        setUserInstitution(user.institution)
+        setUserRole(user.roleId)
+        setToEdit(false)
+
+        console.log(userName)
+    } 
+
     const handleSave = () => {
-        console.log(user)
-        saveUser();
+        console.log(user.name)
+        console.log(userName)
+
+        if(! (user.name === userName && 
+              user.email === userEmail && 
+              user.institution === userInstitution && 
+              user.roleId === userRole)) {
+                user.name=userName;
+                user.email=userEmail;
+                user.institution=userInstitution;
+                user.roleId=userRole;
+                saveUser();
+        }
         setToEdit(false);
     }
 
@@ -106,19 +125,23 @@ const UserInfo = ({ user, deleteUser }) => {
             {toEdit && roles.length !== 0 ? <td className="tdStyle">
                 <select onChange={handleOnRoleChanege} value={userRole} >
                     {roles.map(role => 
-                        {return <option value={role.name}>{role.name}</option>})}
+                        {return <option key={role.id} value={role.name}>{role.name}</option>})}
                 </select>
             </td>
             : <td className="tdStyle">{user.roleId}</td>}
             {toEdit && institutions.length !== 0 ?
                 <td><select onChange={handleOnInstitutionChanege} value={userInstitution}>
                     {institutions.map(item => {
-                        return <option value={item.name}>{item.name}</option>
+                        return <option key={institutions.id} value={item.name}>{item.name}</option>
                     } )}
                 </select>
                 </td>
             : <td className="tdStyle">{user.institution}</td>}
-            <td>{!toConfirm ? <button className="userinfo-button-delete" 
+            <td>{toEdit ? <button className="userinfo-button-cancel"
+                                  onClick={handleOnCancel}>
+                                      Cofnij
+                                  </button> 
+                        : !toConfirm ? <button className="userinfo-button-delete" 
                         onClick={()=>setToConfirm(true)} 
                         id={user.id} >Usuń</button>
                         : <ConfirmWindow deleteUser={deleteUser} 

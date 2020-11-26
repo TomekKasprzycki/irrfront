@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import {
   HashRouter as Router,
@@ -23,16 +23,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 const App = () => {
 
-  const [isAuthenticated, setUserStatus] = useState(false)
-
-  const onLoad = (user) => {
-    console.log("app")
-    console.log(user)
-    if (user.email !== '') { setUserStatus(true) } else {
-      setUserStatus(false)
-    }
-  }
-
 
   return (
     <Provider store={store}>
@@ -41,12 +31,12 @@ const App = () => {
           <Header />
 
             <Switch>
-              <Route exact path="/" component={() => <Login onLoad={onLoad} />} />
+              <Route exact path="/" component={Login} />
               <Route exact path="/registration" component={Registration} />
               <Route path="/PageNotFoundError" component={NotFound} />
-              {isAuthenticated && <Route exact path="/main" component={Main} appProps={{ isAuthenticated }} />}
-              {isAuthenticated && <Route path="/preview" component={IrrPreview} appProps={{ isAuthenticated }} />}
-              {isAuthenticated && <Route path="/userspanel" component={UsersPanel} appProps={{ isAuthenticated }} />}
+              <Route exact path="/main" component={Main} />
+              <Route path="/preview" component={IrrPreview} />
+              <Route path="/userspanel" component={UsersPanel} />
               <Redirect from="*" to="/PageNotFoundError" />
             </Switch>
 

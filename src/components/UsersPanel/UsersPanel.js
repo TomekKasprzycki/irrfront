@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Redirect } from 'react-router-dom';
 import UserInfo from './UserInfo/UserInfo';
-import './UsersInfo.scss'
+import './UsersPanel.scss';
 
 
 const UsersPanel = ({ user }) => {
@@ -24,13 +24,14 @@ const UsersPanel = ({ user }) => {
     }, [user.token])
 
     const deleteUserFromDB = useCallback(async  (userToDelete) => {
+
+        const url = "http://localhost:3001" 
         
-        const url = "http://localhost:3001/users/" + userToDelete.id
+        console.log(url + "/users/" + userToDelete.id)
         
-        return fetch(url, {
+            fetch(url + userToDelete.id, {
             method: "DELETE",
             headers: {
-                'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 'Authorization': user.token,
             }})
@@ -67,7 +68,7 @@ const UsersPanel = ({ user }) => {
                         <th className="tdStyle">Usuń</th>
                         <th className="tdStyle">Zmień rolę</th>
                     </tr>
-                    {users.map(appUser => { return <UserInfo id={appUser.id} user={appUser} deleteUser={deleteUser} />} )}
+                    {users.map(appUser => { return <UserInfo key={appUser.id} user={appUser} deleteUser={deleteUser} />} )}
                 </tbody>
             </table>
             <button onClick={handleOnLoad} >Naduś</button>

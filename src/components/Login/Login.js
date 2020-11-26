@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
 import './Login.scss'
 
-const Login = ({ user, login, getDocs, getTypes, onLoad }) => {
+const Login = ({ user, login, getDocs, getTypes }) => {
 
   useEffect(()=>{ document.title="Strona logowania" },[])
   
@@ -28,8 +28,6 @@ const Login = ({ user, login, getDocs, getTypes, onLoad }) => {
         getDocs();
         getTypes();
       }
-      
-      onLoad(user)    
     
       return (
           user.email === '' ?

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import './Main.scss';
 import MainIrrPrev from './MainIrrPrev/MainIrrPrev';
 
@@ -55,21 +55,22 @@ const Main = ({ user }) => {
     
 
     return(
+        user.email !== '' ? 
         <div className='main'>
             <div className='main-part'>
-                <button className='button'>Sprawdź zamawiającego</button>
-                <button className='button'>Wyświetl sprawy jednostki</button>
-                <button className='button'>Wprowadź nową nieprawidłowość</button>
+                <button id={1} className='button'>Sprawdź zamawiającego</button>
+                <button id={2} className='button'>Wyświetl sprawy jednostki</button>
+                <button id={3} className='button'>Wprowadź nową nieprawidłowość</button>
                 <div>
-                    <button onClick={handleButtonClick} className='button'>Wprowadź zmiany w nieprawidłowości nr
+                    <button id={4} onClick={handleButtonClick} className='button'>Wprowadź zmiany w nieprawidłowości nr
                     <select className='button-select' onChange={(handleOnChange)} >
                         {!irrId && <option value='null'>-- wybierz --</option>}
-                        {idList.map(id => <option value={id}>{id}</option>)}
+                        {idList.map(id => <option key={id} value={id}>{id}</option>)}
                     </select></button>
 
                 </div>
-                <button className='button'>Pokaż wiadomości</button>
-                <button className='button'>Zamknij</button>
+                <button id={5} className='button'>Pokaż wiadomości</button>
+                <button id={6} className='button'>Zamknij</button>
             </div>
             <div>
                 {irrObj.id !== '' ?
@@ -78,23 +79,24 @@ const Main = ({ user }) => {
             </div>
             {user.roleId === 'ROLE_ADMIN' && <div className='main-admin'>
                 <div>
-                    <button className='button' 
+                    <button id={7} className='button' 
                             onClick={()=>history.push('/preview')}>Przeglądaj nieprawidłowości</button>
-                    <button className='button'
+                    <button id={8} className='button'
                             onClick={()=>history.push('/')}>Generuj raporty</button>
-                    <button className='button'
+                    <button id={9} className='button'
                             onClick={()=>history.push('/')}>Przywróć sprawę</button>
                 </div>
                 <div>
-                    <button className='button'
+                    <button id={10} className='button'
                             onClick={()=>history.push('/userspanel')}>Zarządzaj użytkownikami</button>
-                    <button className='button'
+                    <button id={11} className='button'
                             onClick={()=>history.push('/')}>Panel administracyjny</button>
                 </div>
             </div>}
             
 
         </div>
+        : <Redirect to="/"/>
     )
 }
 
