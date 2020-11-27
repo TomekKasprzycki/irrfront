@@ -52,7 +52,7 @@ const IrrPreview = ({ user }) => {
                                     pageDown={pageDown} 
                                     maxPage={irr.length - 1} 
                                     currentPage={page} 
-                                    readOnly={false} />}
+                                    readOnly={true} />}
         </div>
         :
         <Redirect from="/preview" to="/login" />

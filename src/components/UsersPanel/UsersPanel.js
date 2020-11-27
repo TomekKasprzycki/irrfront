@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { Redirect } from 'react-router-dom';
 import UserInfo from './UserInfo/UserInfo';
 import './UsersPanel.scss';
+import axios from 'axios';
 
 
 const UsersPanel = ({ user }) => {
@@ -25,16 +26,16 @@ const UsersPanel = ({ user }) => {
 
     const deleteUserFromDB = useCallback(async  (userToDelete) => {
 
-        const url = "http://localhost:3001" 
+        const url = "http://localhost:3001/users/" 
         
-        console.log(url + "/users/" + userToDelete.id)
-        
-            fetch(url + userToDelete.id, {
-            method: "DELETE",
+            fetch(url + userToDelete, {
+            method: "delete",
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': user.token,
             }})
+
+            // axios.delete(url + userToDelete.id)
             
     }, [user.token])
 

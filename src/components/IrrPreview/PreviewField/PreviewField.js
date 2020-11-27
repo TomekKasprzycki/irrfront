@@ -40,7 +40,7 @@ const PreviewFild = ({ irr_types, irr_docs, irrItem, pageUp, pageDown, maxPage, 
                     <div className="irrPreview-label">Numer projektu:</div>
                     <div className="">{irrItem.wna}</div>
                     <div className="irrPreview-label">Opis nieprawidłowości:</div>
-                    <input className="" value={description} onChange={handleOnChange}/>
+                    <div className="" contentEditable={!readOnly} onChange={handleOnChange}>{description}</div>
                     <div className="irrPreview-label">Tu będzie lista WNP</div>
                     <div>Tu będzie lista...</div>
                     <div className="irrPreview-label">Rodzaj nieprawidłowości:</div>

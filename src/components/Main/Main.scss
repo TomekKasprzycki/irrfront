@@ -16,6 +16,10 @@
 
 }
 
+.main-right-part{
+    display: grid;
+}
+
 .button {
     background-color: $buttonColor;
     font-weight: 700;
@@ -24,18 +28,6 @@
     margin: 10px;
     box-shadow: 3px 3px gray;
 
-}
-
-@media (min-width: 1050px) {
-    .button{
-        width: 250px;
-    }
-}
-
-@media (max-width: 1050px) {
-    .button{
-        max-width: 250px;
-    }
 }
 
 .button:hover {
@@ -66,4 +58,16 @@
 
 .main-admin{
     align-self: start;
+}
+
+@media (min-width: 1050px) {
+    .button{
+        width: 250px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .button{
+        max-width: 250px;
+    }
 }

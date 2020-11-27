@@ -1,13 +1,23 @@
-.confirmWindow-main {
+.confirmWindow-background{
     position: fixed;
-    top: 100px;
-    left: 500px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255, 0.5);
+    display: flex;
+    justify-content: center;
+    
+}
+
+.confirmWindow-main {
     height: 150px;
     width: 300px;
     border-radius: 5px;
     border: 2px solid darkblue;
     background-color: white;
-    opacity: 1;
+    margin-top: 150px;
+
 }
 
 .confirmWindow-header {

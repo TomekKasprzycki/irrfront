@@ -68,22 +68,18 @@ const UserInfo = ({ user, deleteUser }) => {
 
     const handleOnRoleChanege = (e) => {
         setUserRole(e.target.value)
-        // user.roleId = e.target.value
     }
 
     const handleOnInstitutionChanege = (e) => {
         setUserInstitution(e.target.value)
-        // user.institution = e.target.value
     }
 
     const handleOnNameChange = (e) => {
         setUserName(e.target.value)
-        // user.name = e.target.value;
     }
 
     const handleOnEmailChange = (e) => {
         setUserEmail(e.target.value)
-        // user.email = e.target.value;
     }
 
     const handleOnCancel = () => {

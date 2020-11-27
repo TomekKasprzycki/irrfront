@@ -30,7 +30,7 @@ const Main = ({ user }) => {
     const handleOnChange = (e) => {
         e.stopPropagation();
         setIrrId(true);
-        console.log(irrId)
+        console.log(e.target)
         if (e.target.value !== 'null') {
             selectIrr(e.target.value).then(result => setIrrObj(result))
             } 
@@ -38,7 +38,7 @@ const Main = ({ user }) => {
 
     const handleButtonClick = () => {
 
-
+        console.log("clik")
     }
 
 
@@ -61,14 +61,12 @@ const Main = ({ user }) => {
                 <button id={1} className='button'>Sprawdź zamawiającego</button>
                 <button id={2} className='button'>Wyświetl sprawy jednostki</button>
                 <button id={3} className='button'>Wprowadź nową nieprawidłowość</button>
-                <div>
-                    <button id={4} onClick={handleButtonClick} className='button'>Wprowadź zmiany w nieprawidłowości nr
+                <button id={4} onClick={handleButtonClick} className='button'>Wprowadź zmiany w nieprawidłowości nr
                     <select className='button-select' onChange={(handleOnChange)} >
                         {!irrId && <option value='null'>-- wybierz --</option>}
                         {idList.map(id => <option key={id} value={id}>{id}</option>)}
-                    </select></button>
-
-                </div>
+                    </select>
+                </button>
                 <button id={5} className='button'>Pokaż wiadomości</button>
                 <button id={6} className='button'>Zamknij</button>
             </div>
@@ -78,7 +76,7 @@ const Main = ({ user }) => {
                 <div className='main-not-selected'>Nie wybrano nieprawidłowości</div>}
             </div>
             {user.roleId === 'ROLE_ADMIN' && <div className='main-admin'>
-                <div>
+                <div className="main-right-part">
                     <button id={7} className='button' 
                             onClick={()=>history.push('/preview')}>Przeglądaj nieprawidłowości</button>
                     <button id={8} className='button'
@@ -86,7 +84,7 @@ const Main = ({ user }) => {
                     <button id={9} className='button'
                             onClick={()=>history.push('/')}>Przywróć sprawę</button>
                 </div>
-                <div>
+                <div className="main-right-part">
                     <button id={10} className='button'
                             onClick={()=>history.push('/userspanel')}>Zarządzaj użytkownikami</button>
                     <button id={11} className='button'
