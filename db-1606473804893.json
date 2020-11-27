@@ -49,30 +49,6 @@
       "institution": "UMWM - BC",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVkd2lrIiwiZW1haWwiOiJ0ZXN0QHRlc3QucGwiLCJyb2xlSWQiOiJST0xFX09CU0VSVkVSIiwiaW5zdGl0dXRpb24iOiJVTVdNIC0gQkMifQ.e1B3y5AqEv25eaqW6uuUtNFypH0wUKR6t2gAk5U3bVo",
       "id": 5
-    },
-    {
-      "name": "Basia",
-      "email": "basia@egmont.pl",
-      "roleId": "ROLE_ADMIN",
-      "institution": "UMWM - ZPO",
-      "token": "",
-      "id": 6
-    },
-    {
-      "name": "Lucek",
-      "email": "lucek@test.pl",
-      "roleId": "ROLE_USER",
-      "institution": "WUP",
-      "token": "",
-      "id": 7
-    },
-    {
-      "name": "Igo",
-      "email": "smigo",
-      "roleId": "ROLE_USER",
-      "institution": "UMWM - BC",
-      "token": "",
-      "id": 8
     }
   ],
   "roles": [

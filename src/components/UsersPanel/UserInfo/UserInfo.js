@@ -2,46 +2,11 @@ import React, { useState, useCallback } from 'react';
 import './UserInfo.scss'
 import ConfirmWindow from './ConfirmWindow/ConfirmWindow'
 
-const UserInfo = ({ user, deleteUser }) => {
+const UserInfo = ({ user, deleteUser, roles, institutions }) => {
 
     const [toEdit, setToEdit] = useState(false)
-    const [roles, setRoles] = useState([])
-    const [institutions, setInstitutions] = useState([])
-    const [userRole, setUserRole] = useState(user.roleId)
-    const [userInstitution, setUserInstitution] = useState(user.institution)
-    const [userName, setUserName] = useState(user.name)
-    const [userEmail, setUserEmail] = useState(user.email)
+    const [userToEdit, setUserToEdit] = useState(user)
     const [toConfirm, setToConfirm] = useState(false)
-
-    const getRoles = useCallback(async  () => {
-        
-        const url = "http://localhost:3001/roles"
-        
-        fetch(url, {
-            method: "GET",
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': user.token,
-            }})
-            .then(result => result.json())
-            .then(result => setRoles(result))
-            
-    }, [user.token])
-
-    const getInstitutions = useCallback(async  () => {
-        
-        const url = "http://localhost:3001/institutions"
-        
-        fetch(url, {
-            method: "GET",
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': user.token,
-            }})
-            .then(result => result.json())
-            .then(result => setInstitutions(result))
-            
-    }, [user.token])
 
     const saveUser = useCallback(async  () => {
         
@@ -60,50 +25,40 @@ const UserInfo = ({ user, deleteUser }) => {
             
     }, [user])
 
+    const handleOnChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+
+        setUserToEdit({
+            ...userToEdit,
+            [name]: value,
+        })
+    }
+
     const handleOnClick = (e) => {
         setToEdit(true)
-        getRoles();
-        getInstitutions();
-    }
-
-    const handleOnRoleChanege = (e) => {
-        setUserRole(e.target.value)
-    }
-
-    const handleOnInstitutionChanege = (e) => {
-        setUserInstitution(e.target.value)
-    }
-
-    const handleOnNameChange = (e) => {
-        setUserName(e.target.value)
-    }
-
-    const handleOnEmailChange = (e) => {
-        setUserEmail(e.target.value)
     }
 
     const handleOnCancel = () => {
-        setUserName(user.name)
-        setUserEmail(user.email)
-        setUserInstitution(user.institution)
-        setUserRole(user.roleId)
+
+        setUserToEdit(user)
         setToEdit(false)
 
-        console.log(userName)
+        console.log(userToEdit.name)
     } 
 
     const handleSave = () => {
         console.log(user.name)
-        console.log(userName)
+        console.log(userToEdit.name)
 
-        if(! (user.name === userName && 
-              user.email === userEmail && 
-              user.institution === userInstitution && 
-              user.roleId === userRole)) {
-                user.name=userName;
-                user.email=userEmail;
-                user.institution=userInstitution;
-                user.roleId=userRole;
+        if(! (user.name === userToEdit.name && 
+              user.email === userToEdit.email && 
+              user.institution === userToEdit.institution && 
+              user.roleId === userToEdit.roleId)) {
+                user.name=userToEdit.name;
+                user.email=userToEdit.email;
+                user.institution=userToEdit.institution;
+                user.roleId=userToEdit.roleId;
                 saveUser();
         }
         setToEdit(false);
@@ -114,19 +69,19 @@ const UserInfo = ({ user, deleteUser }) => {
         
         <tr className="userinfo-row" id={user.id}>
 
-            {toEdit ? <td><input type="text" value={userName} onChange={handleOnNameChange}/></td>
+            {toEdit ? <td><input type="text" name="name" value={userToEdit.name} onChange={handleOnChange}/></td>
             : <td className="tdStyle">{user.name}</td>}
-            {toEdit ? <td><input type="text" value={userEmail} onChange={handleOnEmailChange}/></td>    
+            {toEdit ? <td><input type="text" name="email" value={userToEdit.email} onChange={handleOnChange}/></td>    
             : <td className="tdStyle">{user.email}</td>}
             {toEdit && roles.length !== 0 ? <td className="tdStyle">
-                <select onChange={handleOnRoleChanege} value={userRole} >
+                <select name="roleId" onChange={handleOnChange} value={userToEdit.roleId} >
                     {roles.map(role => 
                         {return <option key={role.id} value={role.name}>{role.name}</option>})}
                 </select>
             </td>
             : <td className="tdStyle">{user.roleId}</td>}
             {toEdit && institutions.length !== 0 ?
-                <td><select onChange={handleOnInstitutionChanege} value={userInstitution}>
+                <td><select name="institution" onChange={handleOnChange} value={userToEdit.institution}>
                     {institutions.map(item => {
                         return <option key={institutions.id} value={item.name}>{item.name}</option>
                     } )}
