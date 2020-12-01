@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
-const Registration = () => {
+const Registration = ({ user }) => {
 
-    useEffect(()=>{ document.title="Rejestracja" },[])
+    useEffect(()=>{ document.title="Moje konto" },[])
 
     let userDto ={
     name: '',
@@ -42,6 +42,7 @@ const Registration = () => {
 
 
     return(
+        user.email !== '' ?
         <div className='fontStyle'>
             <div>
                 <form onSubmit={handleOnSubmit}>
@@ -55,6 +56,7 @@ const Registration = () => {
             </div>
             <Link className='aLink' to="/">Powrót do strony głównej</Link>
         </div>
+        : <Redirect to='/'/>
     )
 }
 

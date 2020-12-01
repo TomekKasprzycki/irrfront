@@ -93,7 +93,7 @@ const UsersPanel = ({ user }) => {
     }, [user.token])
 
     useEffect(() => { 
-        document.title = "Panel administracyjny";
+        document.title = "Panel zarządzania użytkownikami";
         getRoles();
         getInstitutions();
         getUsers();
@@ -136,27 +136,23 @@ const UsersPanel = ({ user }) => {
         setMayClear(false)
     }
 
-    // const createToken = () => {
-    //     const token = btoa('{ "alg": "HS256", ' +
-    //                        '"typ": "JWT"}') + "." + 
-    //                   btoa('{ "name": "' + userToSave.name + '",' +
-    //                        '"email": "' + userToSave.email +'", ' + 
-    //                        '"roleId": "' + userToSave.roleId +'", '+
-    //                        '"institution": "' + userToSave.institution +'"}');
-    //                 console.log(token)
-    //                 setUserToSave({
-    //                     ...userToSave,
-    //                     ["token"]: token,
-    //                 })
-    // }
+    const createToken = () => {
+        return btoa('{ "alg": "HS256", ' +
+                           '"typ": "JWT"}') + "." + 
+                      btoa('{ "name": "' + userToSave.name + '",' +
+                           '"email": "' + userToSave.email +'", ' + 
+                           '"roleId": "' + userToSave.roleId +'", '+
+                           '"institution": "' + userToSave.institution +'"}');
+                    
+                    
+    }
 
     const addUser = (e) => {
         if (userToSave.name !== '' &&
             userToSave.email !== '' &&
             userToSave.roleId !== 'null' &&
             userToSave.institution !== 'null') {
-                // createToken();
-                // console.log(userToSave)
+                userToSave.token = createToken();
                 addUserToDB(userToSave);
                 claerFields(e.target.parentElement.parentElement.children);
                 getUsers();
@@ -164,7 +160,6 @@ const UsersPanel = ({ user }) => {
     }
 
     const handleClear = (e) => {
-
             claerFields(e.target.parentElement.parentElement.children)
     }
 

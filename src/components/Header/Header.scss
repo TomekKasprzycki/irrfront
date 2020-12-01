@@ -6,8 +6,7 @@
 
     &-wrap {
         display: grid;
-        grid-template-columns: 75% 25%;
-        padding-bottom: 10px;
+        grid-template-columns: auto auto auto;
     }
 
     &-title {
@@ -16,19 +15,34 @@
     }
 
     &-user {
-        font-size: 15px;
-        align-self: flex-start;
         text-align: right;
+    }
+
+    &-image {
+        align-self: center;
+        height: 75px;
+    }
+
+    &-button {
+        background-color: $buttonColor;
+        border-radius: 5px;
+        height: 75px;
+        width: 75px;
+    }
+
+    &-button:hover {
+        background-color: blue;
+        color: white;
+    }
+
+    &-main {
+        border: 1px solid black;
+        border-radius: 5px;
+        height: 75px;
+        width: 75px;
+        text-align: center;
+        align-items: center;
     }
 }
 
-.header-logout-shown {
-    height: 50px;
-    background-color: $buttonColor;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
-}
 

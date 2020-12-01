@@ -11,8 +11,7 @@ import { store, persistor } from './redux/store';
 import Login from './containers/Login';
 import Main from './containers/Main';
 import NotFound from './containers/NotFound';
-import Registration from './components/Registration/Registration';
-import Panel from './containers/Panel';
+import AccountView from './containers/AccountView';
 import Header from './containers/Header';
 import IrrPreview from './containers/IrrPreview';
 import UsersPanel from './containers/UsersPanel';
@@ -28,11 +27,11 @@ const App = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Router>
-          <Header />
+          <Header/>
 
             <Switch>
               <Route exact path="/" component={Login} />
-              <Route exact path="/registration" component={Registration} />
+              <Route exact path="/myaccount" component={AccountView} />
               <Route path="/PageNotFoundError" component={NotFound} />
               <Route exact path="/main" component={Main} />
               <Route path="/preview" component={IrrPreview} />

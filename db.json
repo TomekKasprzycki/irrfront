@@ -73,6 +73,14 @@
       "institution": "UMWM - BC",
       "token": "",
       "id": 8
+    },
+    {
+      "name": "Jarek",
+      "email": "jarek@wypad.pl",
+      "roleId": "ROLE_USER",
+      "institution": "MCP",
+      "token": "eyAiYWxnIjogIkhTMjU2IiwgInR5cCI6ICJKV1QifQ==.eyAibmFtZSI6ICJKYXJlayIsImVtYWlsIjogImphcmVrQHd5cGFkLnBsIiwgInJvbGVJZCI6ICJST0xFX1VTRVIiLCAiaW5zdGl0dXRpb24iOiAiTUNQIn0=",
+      "id": 9
     }
   ],
   "roles": [

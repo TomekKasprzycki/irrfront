@@ -4,7 +4,7 @@ import './Main.scss';
 import MainIrrPrev from './MainIrrPrev/MainIrrPrev';
 
 
-const Main = ({ user }) => {
+const Main = ({ user, logout }) => {
 
     useEffect(() => {
         document.title = "Strona główna"
@@ -68,7 +68,7 @@ const Main = ({ user }) => {
                     </select>
                 </button>
                 <button id={5} className='button'>Pokaż wiadomości</button>
-                <button id={6} className='button'>Zamknij</button>
+                <button id={6} className='button' onClick={() => logout()}>Zamknij</button>
             </div>
             <div>
                 {irrObj.id !== '' ?

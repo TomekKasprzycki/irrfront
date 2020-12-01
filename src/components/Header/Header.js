@@ -1,30 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Header.scss';
+import userlogged from '../../img/user-logged.ico';
+import nouser from '../../img/no-user.ico';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
-const Header = ({ user, logout }) => {
+const Header = ({ user }) => {
 
-const [buttonVisible, setButtonVisible] = useState(false)
-
-const handleOnClick = (e) => {
-    setButtonVisible(!buttonVisible)
-}
-
-const handleLogout = () => {
-    logout();
-    window.location.href='/';
-}
+    const location = useLocation();
+    const history = useHistory();
 
 return (
     <div className='header'>
         <div className='header-wrap'>
+            <div>
+                {location.pathname === '/main' ? 
+                    <div className='header-main'>Strona główna</div> : 
+                    <div>
+                        <button className='header-button'
+                                onClick={() => history.push('/main')}>Wróć do strony głównej</button> 
+                    </div>}
+            </div>
             <h1 className="header-title">System raportowania o nieprawidłowościach  </h1>
-            <div className="header-user" >
-                <div onClick={handleOnClick}>Użytkownik zalogowany: {user.email !== '' ? user.name : 'brak'}</div>
-                {buttonVisible && <div><button className='header-logout-shown' onClick={handleLogout} >Wyloguj</button></div>}
+            <div className="header-user">
+                {user.email === '' ? 
+                    <img className="header-image" src={nouser} alt='Użytkonik niezalogowany'/> :
+                    <img className="header-image" src={userlogged} alt='Użytkownik zalogowany'/>}
             </div>
         </div>
     </div>
 )}
+
 
 export default Header;

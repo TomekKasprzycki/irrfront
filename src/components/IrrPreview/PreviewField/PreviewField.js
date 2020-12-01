@@ -44,7 +44,7 @@ const PreviewFild = ({ irr_types, irr_docs, irrItem, pageUp, pageDown, maxPage, 
                     <div className="irrPreview-label">Tu będzie lista WNP</div>
                     <div>Tu będzie lista...</div>
                     <div className="irrPreview-label">Rodzaj nieprawidłowości:</div>
-                    <div className="">{typesToRender.map(irr_type => <span> {irr_type.name} <br /></span>)}</div>
+                    <div className="">{typesToRender.map(irr_type => <span key={irr_type.id}> {irr_type.name} <br /></span>)}</div>
                     <div className="irrPreview-label">Podstawa stwierdzenia:</div>
                     <div className="">{irr_docs.filter(irr_doc => irr_doc.id === irrItem.podst_niepr_id).map(irr_doc => irr_doc.name)}</div>
             
